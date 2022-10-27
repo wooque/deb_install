@@ -151,6 +151,7 @@ libcom-err2
 libcrypt1
 libcryptsetup12
 libdb5.3
+libdbus-glib-1-2
 libdebconfclient0
 libdevmapper1.02.1
 libedit2
