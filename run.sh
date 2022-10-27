@@ -6,6 +6,9 @@ set -o pipefail
 
 echo_sleep () { echo "$1"; sleep 1; }
 
+id=$(grep ^ID= /etc/os-release)
+DISTRO=${id/ID=/}
+
 INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-emoji"
 INSTALL_GNOME="gnome-shell-extension-appindicator gnome-shell-extension-bluetooth-quick-connect gnome-tweaks gstreamer1.0-vaapi libdbus-glib-1-2"
 INSTALL_GUI="gimp meld"
@@ -18,12 +21,16 @@ INSTALL_PACKAGES="amd64-microcode $INSTALL_FONTS $INSTALL_GNOME $INSTALL_GUI $IN
 REMOVE_GNOME="baobab cheese evolution-data-server fwupd gnome-calendar gnome-characters gnome-clocks gnome-font-viewer gnome-games gnome-logs gnome-maps gnome-music gnome-online-accounts gnome-software gnome-sound-recorder gnome-sushi gnome-system-monitor gnome-weather ibus"
 REMOVE_GAMES="aisleriot gnome-mahjongg gnome-mines gnome-sudoku"
 REMOVE_SYSTEM="snapd systemd-oomd needrestart"
+if [ "$DISTRO" = "debian" ]; then
+  # removing plymouth speeds up boot
+  REMOVE_SYSTEM="plymouth $REMOVE_SYSTEM"
+fi
 REMOVE_APPS="deja-dup firefox-esr remmina shotwell simple-scan thunderbird"
 REMOVE_PACKAGES="$REMOVE_SYSTEM $REMOVE_GNOME $REMOVE_GAMES $REMOVE_APPS"
 
 ENABLE_SERVICES="tlp"
 
-DISABLE_PREINSTALLED="avahi-daemon bolt cups cups-browsed kerneloops ModemManager rsyslog switcheroo-control"
+DISABLE_PREINSTALLED="avahi-daemon bolt cups cups-browsed kerneloops ModemManager rsyslog switcheroo-control NetworkManager-wait-online"
 DISABLE_INSTALLED="containerd docker nmbd smbd"
 DISABLE_SERVICES="$DISABLE_PREINSTALLED $DISABLE_INSTALLED"
 
@@ -103,9 +110,6 @@ EOF
 }
 
 main () {
-  id=$(grep ^ID= /etc/os-release)
-  DISTRO=${id/ID=/}
-
   echo_sleep "Install packages..."
   sudo apt install $INSTALL_PACKAGES
 
@@ -197,4 +201,3 @@ main () {
   gsettings set org.gnome.shell app-picker-layout "[]"
 }
 main "$@"
-
