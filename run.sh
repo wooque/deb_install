@@ -72,7 +72,6 @@ asdf-vm () {
   . "$HOME/.asdf/asdf.sh"
   asdf plugin-add nodejs
   asdf plugin-add python
-  asdf install nodejs lts-hydrogen
 }
 
 dropbox () {
@@ -105,7 +104,7 @@ Type=Application
 Icon=$HOME/.local/share/firefox/browser/chrome/icons/default/default128.png
 Categories=GNOME;GTK;Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
-StartupNotify=true
+StartupNotify=false
 EOF
 }
 
@@ -131,7 +130,7 @@ main () {
   sudo systemctl enable --now $ENABLE_SERVICES
 
   echo_sleep "Disable system services..."
-  sudo systemctl disable --now $DISABLE_SERVICES
+  sudo systemctl disable --now $DISABLE_SERVICES || true
 
   echo_sleep "Disable user services..."
   systemctl --user mask --now $DISABLE_USER_SERVICES
@@ -199,5 +198,10 @@ main () {
 
   echo_sleep "Reset app grid..."
   gsettings set org.gnome.shell app-picker-layout "[]"
+
+  echo_sleep "asdf install..."
+  . "$HOME/.asdf/asdf.sh"
+  asdf nodejs update nodebuild
+  asdf install
 }
 main "$@"

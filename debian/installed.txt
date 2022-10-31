@@ -111,7 +111,6 @@ dirmngr
 discover
 discover-data
 distro-info-data
-dleyna-server
 dmidecode
 dmsetup
 dnsmasq-base
@@ -409,6 +408,7 @@ libavcodec59
 libavdevice59
 libavfilter8
 libavformat59
+libavif15
 libavutil57
 libayatana-appindicator3-1
 libayatana-ido3-0.4-0
@@ -433,7 +433,7 @@ libboost-iostreams1.74.0
 libboost-locale1.74.0
 libboost-thread1.74.0
 libbox2d2
-libbpf0
+libbpf1
 libbrasero-media3-1
 libbrlapi0.8
 libbrotli1
@@ -523,8 +523,6 @@ libdevmapper1.02.1
 libdiscover2
 libdjvulibre21
 libdjvulibre-text
-libdleyna-connector-dbus-1.0-1
-libdleyna-core-1.0-5
 libdmapsharing-3.0-2
 libdotconf0
 libdpkg-perl
@@ -605,6 +603,7 @@ libfuse2
 libfuse3-3
 libgail18
 libgail-common
+libgav1-1
 libgbm1
 libgc1
 libgcc-12-dev
@@ -682,8 +681,9 @@ libgprofng0
 libgraphene-1.0-0
 libgraphite2-3
 libgrilo-0.3-0
-libgs9
-libgs9-common
+libgs10
+libgs10-common
+libgs-common
 libgsf-1-114
 libgsf-1-common
 libgsf-bin
@@ -692,7 +692,7 @@ libgsound0
 libgspell-1-2
 libgspell-1-common
 libgssapi-krb5-2
-libgssdp-1.2-0
+libgssdp-1.6-0
 libgstreamer1.0-0
 libgstreamer-gl1.0-0
 libgstreamer-plugins-bad1.0-0
@@ -716,7 +716,7 @@ libgtop2-common
 libgts-0.7-5
 libgts-bin
 libgudev-1.0-0
-libgupnp-1.2-1
+libgupnp-1.6-0
 libgupnp-av-1.0-3
 libgupnp-dlna-2.0-4
 libgupnp-igd-1.0-4
@@ -747,7 +747,7 @@ libibus-1.0-5
 libibverbs1
 libical3
 libice6
-libicu71
+libicu72
 libid3tag0
 libidn12
 libidn2-0
@@ -802,6 +802,7 @@ liblab-gamut1
 liblangtag1
 liblangtag-common
 liblapack3
+liblc3-0
 liblcms2-2
 libldacbt-abr2
 libldacbt-enc2
@@ -811,7 +812,7 @@ libldb2
 liblerc4
 liblilv-0-0
 liblirc-client0
-libllvm14
+libllvm15
 liblmdb0
 liblocale-gettext-perl
 liblockfile-bin
@@ -970,7 +971,7 @@ libpcsclite1
 libpeas-1.0-0
 libpeas-common
 libperl4-corelibs-perl
-libperl5.34
+libperl5.36
 libpgm-5.3-0
 libpipeline1
 libpipewire-0.3-0
@@ -993,7 +994,7 @@ libportal-gtk3-1
 libportal-gtk4-1
 libpostproc56
 libprocps8
-libprotobuf23
+libprotobuf32
 libprotobuf-c1
 libproxy1-plugin-gsettings
 libproxy1-plugin-networkmanager
@@ -1050,11 +1051,11 @@ librsvg2-2
 librsvg2-common
 librtmp1
 librubberband2
-librygel-core-2.6-2
-librygel-db-2.6-2
-librygel-renderer-2.6-2
-librygel-renderer-gst-2.6-2
-librygel-server-2.6-2
+librygel-core-2.8-0
+librygel-db-2.8-0
+librygel-renderer-2.8-0
+librygel-renderer-gst-2.8-0
+librygel-server-2.8-0
 libsamplerate0
 libsane1
 libsane-common
@@ -1322,6 +1323,7 @@ libxxhash0
 libyajl2
 libyaml-0-2
 libyelp0
+libyuv0
 libz3-4
 libzbar0
 libzimg2
@@ -1332,7 +1334,7 @@ libzvbi0
 libzvbi-common
 libzxingcore1
 linux-base
-linux-image-5.19.0-2-amd64
+linux-image-6.0.0-5-amd64
 linux-image-amd64
 linux-libc-dev
 lm-sensors
@@ -1402,7 +1404,7 @@ pci.ids
 pciutils
 perl
 perl-base
-perl-modules-5.34
+perl-modules-5.36
 perl-openssl-defaults
 perl-tk
 pinentry-gnome3

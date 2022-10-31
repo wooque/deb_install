@@ -137,7 +137,6 @@ libattr1
 libaudit1
 libaudit-common
 libblkid1
-libbpf0
 libbsd0
 libbz2-1.0
 libbz2-dev
