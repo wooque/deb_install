@@ -138,7 +138,8 @@ main () {
   echo_sleep "Update GRUB..."
   sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
   if [ "$DISTRO" = "debian" ]; then
-  sudo sed -i 's/quiet/quiet loglevel=3 systemd.show_status=auto mitigations=off amd_iommu=off/' /etc/default/grub
+  sudo sed -i 's/quiet/quiet loglevel=3 systemd.show_status=auto mitigations=off amd_iommu=off nowatchdog/' /etc/default/grub
+  echo 'GRUB_BACKGROUND=""' | sudo tee -a /etc/default/grub
   elif [ "$DISTRO" = "ubuntu" ]; then
   sudo sed -i 's/quiet splash/quiet splash mitigations=off amd_iommu=off/' /etc/default/grub
   fi
@@ -148,8 +149,8 @@ main () {
   sudo sed -i 's/#SystemMaxUse=/SystemMaxUse=10M/' /etc/systemd/journald.conf
   sudo sed -i 's/#RuntimeMaxUse=/RuntimeMaxUse=10M/' /etc/systemd/journald.conf
 
-  echo_sleep "Disable Bluetooth auto-enable"
-  sudo sed -i 's/AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
+  #echo_sleep "Disable Bluetooth auto-enable"
+  #sudo sed -i 's/AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
 
   echo_sleep "Disable Bluetooth hardware volume..."
   sudo mkdir -p /etc/wireplumber/bluetooth.lua.d

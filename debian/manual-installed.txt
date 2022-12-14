@@ -203,7 +203,6 @@ libpam-systemd
 libpcre2-8-0
 libpcre3
 libpopt0
-libprocps8
 libproxy1-plugin-gsettings
 libproxy1-plugin-networkmanager
 libproxy1-plugin-webkit

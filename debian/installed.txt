@@ -993,7 +993,7 @@ libportal1
 libportal-gtk3-1
 libportal-gtk4-1
 libpostproc56
-libprocps8
+libproc2-0
 libprotobuf32
 libprotobuf-c1
 libproxy1-plugin-gsettings
@@ -1009,6 +1009,9 @@ libpwquality-common
 libpython3.10
 libpython3.10-minimal
 libpython3.10-stdlib
+libpython3.11
+libpython3.11-minimal
+libpython3.11-stdlib
 libpython3-stdlib
 libqmi-glib5
 libqmi-proxy
@@ -1085,7 +1088,7 @@ libslirp0
 libsm6
 libsmartcols1
 libsmbclient
-libsnapd-glib1
+libsnapd-glib-2-1
 libsnappy1v5
 libsndfile1
 libsndio7.0
@@ -1332,9 +1335,9 @@ libzmq5
 libzstd1
 libzvbi0
 libzvbi-common
-libzxingcore1
+libzxing2
 linux-base
-linux-image-6.0.0-5-amd64
+linux-image-6.0.0-6-amd64
 linux-image-amd64
 linux-libc-dev
 lm-sensors
@@ -1525,6 +1528,7 @@ rygel
 rygel-playbin
 rygel-tracker
 samba
+samba-ad-provision
 samba-common
 samba-common-bin
 samba-dsdb-modules
