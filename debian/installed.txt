@@ -219,8 +219,6 @@ gir1.2-rsvg-2.0
 gir1.2-secret-1
 gir1.2-soup-2.4
 gir1.2-soup-3.0
-gir1.2-totem-1.0
-gir1.2-totemplparser-1.0
 gir1.2-upowerglib-1.0
 gir1.2-webkit2-4.0
 gir1.2-webkit2-4.1
@@ -237,6 +235,7 @@ gnome-accessibility-themes
 gnome-backgrounds
 gnome-bluetooth-3-common
 gnome-bluetooth-sendto
+gnome-browser-connector
 gnome-calculator
 gnome-color-manager
 gnome-control-center
@@ -742,6 +741,7 @@ libhttp-date-perl
 libhttp-message-perl
 libhttp-negotiate-perl
 libhunspell-1.7-0
+libhwy1
 libhyphen0
 libibus-1.0-5
 libibverbs1
@@ -787,6 +787,7 @@ libjson-c5
 libjson-glib-1.0-0
 libjson-glib-1.0-common
 libjte2
+libjxl0.7
 libjxr0
 libjxr-tools
 libk5crypto3
@@ -825,6 +826,7 @@ liblqr-1-0
 liblsan0
 libltc11
 libltdl7
+liblua5.2-0
 liblua5.3-0
 liblwp-mediatypes-perl
 liblwp-protocol-https-perl
@@ -873,6 +875,7 @@ libmtdev1
 libmtp9
 libmtp-common
 libmtp-runtime
+libmujs2
 libmutter-11-0
 libmwaw-0.3-3
 libmypaint-1.5-1
@@ -986,11 +989,11 @@ libpocketsphinx3
 libpolkit-agent-1-0
 libpolkit-gobject-1-0
 libpoppler123
+libpoppler126
 libpoppler-cpp0v5
 libpoppler-glib8
 libpopt0
 libportal1
-libportal-gtk3-1
 libportal-gtk4-1
 libpostproc56
 libproc2-0
@@ -1152,13 +1155,13 @@ libthai-data
 libtheora0
 libtie-ixhash-perl
 libtiff5
+libtiff6
 libtimedate-perl
 libtinfo6
 libtirpc3
 libtirpc-common
 libtirpc-dev
 libtk8.6
-libtotem0
 libtotem-plparser18
 libtotem-plparser-common
 libtracker-sparql-3.0-0
@@ -1308,6 +1311,7 @@ libxml-xpathengine-perl
 libxmu6
 libxmuu1
 libxpm4
+libxpresent1
 libxrandr2
 libxrender1
 libxres1
@@ -1337,7 +1341,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
-linux-image-6.0.0-6-amd64
+linux-image-6.1.0-1-amd64
 linux-image-amd64
 linux-libc-dev
 lm-sensors
@@ -1370,6 +1374,7 @@ mobile-broadband-provider-info
 modemmanager
 mokutil
 mount
+mpv
 mutter-common
 nano
 nautilus
@@ -1581,9 +1586,6 @@ tlp
 tlp-rdw
 toilet
 toilet-fonts
-totem
-totem-common
-totem-plugins
 tpm-udev
 traceroute
 tracker

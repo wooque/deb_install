@@ -11,14 +11,14 @@ DISTRO=${id/ID=/}
 
 INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-emoji"
 INSTALL_GNOME="gnome-shell-extension-appindicator gnome-shell-extension-bluetooth-quick-connect gnome-tweaks gstreamer1.0-vaapi libdbus-glib-1-2"
-INSTALL_GUI="gimp meld"
+INSTALL_GUI="gimp meld mpv"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 radeontop ranger rsync samba tlp yt-dlp"
 INSTALL_DEV="docker.io docker-compose git gitk"
 INSTALL_BUILD="build-essential zlib1g-dev libbz2-dev libncurses-dev libffi-dev libreadline-dev libssl-dev libsqlite3-dev liblzma-dev"
 INSTALL_EXTRA="brave-browser viber code beekeeper-studio asdf-vm dropbox insomnia firefox"
 INSTALL_PACKAGES="amd64-microcode $INSTALL_FONTS $INSTALL_GNOME $INSTALL_GUI $INSTALL_UTILS $INSTALL_DEV $INSTALL_BUILD"
 
-REMOVE_GNOME="baobab cheese evolution-data-server fwupd gnome-calendar gnome-characters gnome-clocks gnome-font-viewer gnome-games gnome-logs gnome-maps gnome-music gnome-online-accounts gnome-software gnome-sound-recorder gnome-sushi gnome-system-monitor gnome-weather ibus"
+REMOVE_GNOME="baobab cheese evolution-data-server fwupd gnome-calendar gnome-characters gnome-clocks gnome-font-viewer gnome-games gnome-logs gnome-maps gnome-music gnome-online-accounts gnome-software gnome-sound-recorder gnome-sushi gnome-system-monitor gnome-weather ibus totem"
 REMOVE_GAMES="aisleriot gnome-mahjongg gnome-mines gnome-sudoku"
 REMOVE_SYSTEM="snapd systemd-oomd needrestart"
 if [ "$DISTRO" = "debian" ]; then
