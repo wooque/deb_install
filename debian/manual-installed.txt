@@ -256,6 +256,7 @@ media-types
 meld
 mime-support
 mount
+mpv
 nano
 nautilus
 ncdu
@@ -307,8 +308,6 @@ task-laptop
 tasksel
 tasksel-data
 tlp
-totem
-totem-plugins
 traceroute
 tracker
 transmission-gtk
