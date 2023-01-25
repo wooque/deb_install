@@ -988,7 +988,6 @@ libpng16-16
 libpocketsphinx3
 libpolkit-agent-1-0
 libpolkit-gobject-1-0
-libpoppler123
 libpoppler126
 libpoppler-cpp0v5
 libpoppler-glib8
@@ -1154,7 +1153,6 @@ libthai0
 libthai-data
 libtheora0
 libtie-ixhash-perl
-libtiff5
 libtiff6
 libtimedate-perl
 libtinfo6
