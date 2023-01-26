@@ -294,6 +294,7 @@ seahorse
 sed
 sensible-utils
 shim-signed
+signal-desktop
 sound-theme-freedesktop
 system-config-printer-common
 system-config-printer-udev

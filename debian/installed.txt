@@ -192,6 +192,7 @@ gir1.2-glib-2.0
 gir1.2-gmenu-3.0
 gir1.2-gnomebluetooth-3.0
 gir1.2-gnomedesktop-3.0
+gir1.2-goa-1.0
 gir1.2-graphene-1.0
 gir1.2-gst-plugins-base-1.0
 gir1.2-gstreamer-1.0
@@ -1008,9 +1009,6 @@ libpulsedsp
 libpulse-mainloop-glib0
 libpwquality1
 libpwquality-common
-libpython3.10
-libpython3.10-minimal
-libpython3.10-stdlib
 libpython3.11
 libpython3.11-minimal
 libpython3.11-stdlib
@@ -1339,7 +1337,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
-linux-image-6.1.0-1-amd64
+linux-image-6.1.0-2-amd64
 linux-image-amd64
 linux-libc-dev
 lm-sensors
@@ -1415,6 +1413,8 @@ perl-openssl-defaults
 perl-tk
 pinentry-gnome3
 pipewire
+pipewire-alsa
+pipewire-audio
 pipewire-bin
 pipewire-pulse
 pkexec
@@ -1430,14 +1430,13 @@ ppp
 procps
 psmisc
 publicsuffix
-pulseaudio
-pulseaudio-module-bluetooth
 pulseaudio-utils
 python3
-python3.10
-python3.10-minimal
+python3.11
+python3.11-minimal
 python3-apt
 python3-attr
+python3-blinker
 python3-brlapi
 python3-brotli
 python3-cairo
@@ -1448,6 +1447,7 @@ python3-charset-normalizer
 python3-cryptography
 python3-cups
 python3-cupshelpers
+python3-dateutil
 python3-dbus
 python3-debconf
 python3-debian
@@ -1467,6 +1467,9 @@ python3-httplib2
 python3-idna
 python3-json-pointer
 python3-jsonschema
+python3-jwt
+python3-lazr.restfulclient
+python3-lazr.uri
 python3-ldb
 python3-lib2to3
 python3-louis
@@ -1475,6 +1478,7 @@ python3-markdown
 python3-markupsafe
 python3-minimal
 python3-mutagen
+python3-oauthlib
 python3-pkg-resources
 python3-protobuf
 python3-pyatspi
@@ -1500,6 +1504,7 @@ python3-texttable
 python3-uno
 python3-uritemplate
 python3-urllib3
+python3-wadllib
 python3-webcolors
 python3-websocket
 python3-websockets
@@ -1550,6 +1555,7 @@ shim-helpers-amd64-signed
 shim-signed
 shim-signed-common
 shim-unsigned
+signal-desktop
 software-properties-common
 software-properties-gtk
 sound-icons
@@ -1595,7 +1601,6 @@ tzdata
 ucf
 udev
 udisks2
-unattended-upgrades
 uno-libs-private
 unzip
 update-inetd
