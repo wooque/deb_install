@@ -15,7 +15,7 @@ INSTALL_GUI="gimp meld mpv"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 radeontop ranger rsync samba tlp yt-dlp"
 INSTALL_DEV="docker.io docker-compose git gitk"
 INSTALL_BUILD="build-essential zlib1g-dev libbz2-dev libncurses-dev libffi-dev libreadline-dev libssl-dev libsqlite3-dev liblzma-dev"
-INSTALL_EXTRA="brave-browser viber code beekeeper-studio asdf-vm dropbox insomnia firefox signal-desktop"
+INSTALL_EXTRA="brave-browser viber code beekeeper-studio asdf-vm dropbox insomnia firefox nodejs signal-desktop"
 INSTALL_PACKAGES="amd64-microcode $INSTALL_FONTS $INSTALL_GNOME $INSTALL_GUI $INSTALL_UTILS $INSTALL_DEV $INSTALL_BUILD"
 
 REMOVE_GNOME="baobab cheese evolution-data-server fwupd gnome-calendar gnome-characters gnome-clocks gnome-font-viewer gnome-games gnome-logs gnome-maps gnome-music gnome-online-accounts gnome-software gnome-sound-recorder gnome-sushi gnome-system-monitor gnome-weather ibus totem"
@@ -106,6 +106,11 @@ Categories=GNOME;GTK;Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
 StartupNotify=false
 EOF
+}
+
+nodejs () {
+  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
+  sudo apt install nodejs
 }
 
 signal-desktop () {

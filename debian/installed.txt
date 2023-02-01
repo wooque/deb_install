@@ -520,6 +520,7 @@ libdecor-0-0
 libdecor-0-plugin-1-cairo
 libdeflate0
 libdevmapper1.02.1
+libdirectfb-1.7-7
 libdiscover2
 libdjvulibre21
 libdjvulibre-text
@@ -824,6 +825,7 @@ liblouisutdml9
 liblouisutdml-bin
 liblouisutdml-data
 liblqr-1-0
+liblrdf0
 liblsan0
 libltc11
 libltdl7
@@ -890,6 +892,7 @@ libncurses-dev
 libncursesw6
 libndctl6
 libndp0
+libneon27
 libnet1
 libnet-dbus-perl
 libnetfilter-conntrack3
@@ -1337,7 +1340,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
-linux-image-6.1.0-2-amd64
+linux-image-6.1.0-3-amd64
 linux-image-amd64
 linux-libc-dev
 lm-sensors
@@ -1387,6 +1390,7 @@ netpbm
 network-manager
 network-manager-gnome
 nftables
+nodejs
 ntfs-3g
 ocl-icd-libopencl1
 openssh-client
