@@ -330,7 +330,6 @@ init
 initramfs-tools
 initramfs-tools-core
 init-system-helpers
-insomnia
 installation-report
 intel-media-va-driver
 ipp-usb
@@ -867,7 +866,6 @@ libmozjs-102-0
 libmp3lame0
 libmpc3
 libmpcdec6
-libmpdec3
 libmpeg2-4
 libmpeg2encpp-2.1-0
 libmpfr6
