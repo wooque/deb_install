@@ -15,7 +15,7 @@ INSTALL_GUI="gimp meld mpv"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 radeontop ranger rsync samba tlp yt-dlp"
 INSTALL_DEV="docker.io docker-compose git gitk"
 INSTALL_BUILD="build-essential zlib1g-dev libbz2-dev libncurses-dev libffi-dev libreadline-dev libssl-dev libsqlite3-dev liblzma-dev"
-INSTALL_EXTRA="brave-browser viber code beekeeper-studio asdf-vm dropbox nodejs signal-desktop"
+INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm beekeeper-studio dropbox"
 INSTALL_PACKAGES="amd64-microcode $INSTALL_FONTS $INSTALL_GNOME $INSTALL_GUI $INSTALL_UTILS $INSTALL_DEV $INSTALL_BUILD"
 
 REMOVE_GNOME="baobab cheese evolution-data-server fwupd gnome-calendar gnome-characters gnome-clocks gnome-font-viewer gnome-games gnome-logs gnome-maps gnome-music gnome-online-accounts gnome-shell-extensions gnome-software gnome-sound-recorder gnome-sushi gnome-system-monitor gnome-weather ibus totem yelp"
@@ -68,7 +68,7 @@ beekeeper-studio () {
 }
 
 asdf-vm () {
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.2
   . "$HOME/.asdf/asdf.sh"
   asdf plugin-add nodejs
   asdf plugin-add python
