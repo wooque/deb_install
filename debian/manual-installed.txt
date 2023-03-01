@@ -86,13 +86,10 @@ gnome-session
 gnome-settings-daemon
 gnome-shell
 gnome-shell-extension-appindicator
-gnome-shell-extension-bluetooth-quick-connect
-gnome-shell-extensions
 gnome-terminal
 gnome-text-editor
 gnome-themes-extra
 gnome-tweaks
-gnome-user-docs
 gnome-user-share
 gpgv
 grep
@@ -331,7 +328,6 @@ wpasupplicant
 xdg-desktop-portal-gnome
 xdg-user-dirs-gtk
 xz-utils
-yelp
 yt-dlp
 zenity
 zlib1g
