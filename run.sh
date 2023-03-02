@@ -12,7 +12,7 @@ DISTRO=${id/ID=/}
 INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-emoji"
 INSTALL_GNOME="gnome-shell-extension-appindicator gnome-tweaks gstreamer1.0-vaapi libdbus-glib-1-2"
 INSTALL_GUI="gimp meld mpv"
-INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 radeontop ranger rsync samba tlp yt-dlp"
+INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 radeontop ranger rsync samba tlp yt-dlp unattended-upgrades"
 INSTALL_DEV="docker.io docker-compose git gitk"
 INSTALL_BUILD="build-essential zlib1g-dev libbz2-dev libncurses-dev libffi-dev libreadline-dev libssl-dev libsqlite3-dev liblzma-dev"
 INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm beekeeper-studio dropbox"

@@ -1440,6 +1440,7 @@ python3-debconf
 python3-debian
 python3-debianbts
 python3-distro
+python3-distro-info
 python3-distutils
 python3-dnspython
 python3-docker
@@ -1577,6 +1578,7 @@ tzdata
 ucf
 udev
 udisks2
+unattended-upgrades
 uno-libs-private
 unzip
 update-inetd

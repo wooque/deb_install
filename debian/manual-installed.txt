@@ -312,6 +312,7 @@ transmission-gtk
 tzdata
 ucf
 udev
+unattended-upgrades
 usbutils
 usr-is-merged
 util-linux
