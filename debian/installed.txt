@@ -1067,7 +1067,7 @@ libsensors5
 libsensors-config
 libsepol2
 libserd-0-0
-libsgutils2-2
+libsgutils2-1.46-2
 libshine3
 libshout3
 libsidplay1v5
