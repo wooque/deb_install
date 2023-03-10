@@ -28,7 +28,6 @@ base-passwd
 bash
 bash-completion
 bc
-beekeeper-studio
 bind9-dnsutils
 bind9-host
 bind9-libs
