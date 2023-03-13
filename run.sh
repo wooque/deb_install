@@ -10,9 +10,9 @@ id=$(grep ^ID= /etc/os-release)
 DISTRO=${id/ID=/}
 
 INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-emoji"
-INSTALL_GNOME="gnome-shell-extension-appindicator gnome-tweaks gstreamer1.0-vaapi libdbus-glib-1-2"
+INSTALL_GNOME="gnome-shell-extension-appindicator gnome-tweaks gstreamer1.0-vaapi"
 INSTALL_GUI="gimp meld mpv"
-INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 radeontop ranger rsync samba tlp yt-dlp unattended-upgrades"
+INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync samba tlp yt-dlp unattended-upgrades"
 INSTALL_DEV="docker.io docker-compose git gitk"
 INSTALL_BUILD="build-essential zlib1g-dev libbz2-dev libncurses-dev libffi-dev libreadline-dev libssl-dev libsqlite3-dev liblzma-dev"
 INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm dropbox"
@@ -20,17 +20,21 @@ INSTALL_PACKAGES="amd64-microcode $INSTALL_FONTS $INSTALL_GNOME $INSTALL_GUI $IN
 
 REMOVE_GNOME="baobab cheese evolution-data-server fwupd gnome-calendar gnome-characters gnome-clocks gnome-font-viewer gnome-games gnome-logs gnome-maps gnome-music gnome-online-accounts gnome-shell-extensions gnome-software gnome-sound-recorder gnome-sushi gnome-system-monitor gnome-weather ibus totem yelp"
 REMOVE_GAMES="aisleriot gnome-mahjongg gnome-mines gnome-sudoku"
-REMOVE_SYSTEM="snapd systemd-oomd needrestart"
+REMOVE_SYSTEM="low-memory-monitor needrestart snapd systemd-oomd"
 if [ "$DISTRO" = "debian" ]; then
   # removing plymouth speeds up boot
   REMOVE_SYSTEM="plymouth $REMOVE_SYSTEM"
 fi
 REMOVE_APPS="deja-dup firefox-esr remmina shotwell simple-scan synaptic thunderbird"
-REMOVE_PACKAGES="$REMOVE_SYSTEM $REMOVE_GNOME $REMOVE_GAMES $REMOVE_APPS"
+REMOVE_LIBREOFFICE_EXTRAS="libreoffice-help-en-us mythes-en-us hyphen-en-us"
+REMOVE_PACKAGES="$REMOVE_SYSTEM $REMOVE_GNOME $REMOVE_GAMES $REMOVE_APPS $REMOVE_LIBREOFFICE_EXTRAS"
 
 ENABLE_SERVICES="tlp"
 
-DISABLE_PREINSTALLED="avahi-daemon bolt cups cups-browsed kerneloops ModemManager rsyslog switcheroo-control NetworkManager-wait-online"
+DISABLE_PREINSTALLED="avahi-daemon bolt cups cups-browsed ModemManager switcheroo-control NetworkManager-wait-online"
+if [ "$DISTRO" = "ubuntu" ]; then
+  DISABLE_PREINSTALLED="$DISABLE_PREINSTALLED kerneloops rsyslog"
+fi
 DISABLE_INSTALLED="containerd docker nmbd smbd"
 DISABLE_SERVICES="$DISABLE_PREINSTALLED $DISABLE_INSTALLED"
 
@@ -46,8 +50,7 @@ DOTFILES_GITHUB="wooque/dotfiles"
 brave-browser () {
   sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
   echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"| sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-  sudo apt update
-  sudo apt install brave-browser
+  sudo apt update && sudo apt install brave-browser
 }
 
 viber () {
@@ -61,40 +64,37 @@ code () {
 }
 
 asdf-vm () {
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.2
+  version="0.11.2"
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v${version}
   . "$HOME/.asdf/asdf.sh"
   asdf plugin-add nodejs
   asdf plugin-add python
 }
 
 dropbox () {
-  version="2020.03.04"
-  wget "https://linux.dropbox.com/packages/ubuntu/dropbox_${version}_amd64.deb" -O /tmp/dropbox.deb
+  version="2022.12.05"
+  wget "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_${version}_amd64.deb" -O /tmp/dropbox.deb
   sudo apt install /tmp/dropbox.deb
+  sudo apt update && sudo apt upgrade
   apt-key export 5044912E | sudo gpg --dearmour -o /usr/share/keyrings/dropbox.gpg
   sudo sed -i 's/arch=i386,amd64]/arch=i386,amd64 signed-by=\/usr\/share\/keyrings\/dropbox.gpg]/' /etc/apt/sources.list.d/dropbox.list
 }
 
 nodejs () {
-  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
-  sudo apt install nodejs
+  wget -O- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/nodesource.gpg
+  echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x bookworm main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+  sudo apt update && sudo apt install nodejs
 }
 
 signal-desktop () {
-  wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
-  cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
-  rm signal-desktop-keyring.gpg
-
-  echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
-  sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-
-  sudo apt update
-  sudo apt install signal-desktop
+  wget -O- https://updates.signal.org/desktop/apt/keys.asc | sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
+  echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal-xenial.list
+  sudo apt update && sudo apt install signal-desktop
 }
 
 main () {
   echo_sleep "Install packages..."
-  sudo apt install $INSTALL_PACKAGES
+  sudo apt install --no-install-recommends $INSTALL_PACKAGES
 
   for app in $INSTALL_EXTRA; do
     echo_sleep "Install $app..."
@@ -114,7 +114,7 @@ main () {
   sudo systemctl enable --now $ENABLE_SERVICES
 
   echo_sleep "Disable system services..."
-  sudo systemctl disable --now $DISABLE_SERVICES || true
+  sudo systemctl disable --now $DISABLE_SERVICES
 
   echo_sleep "Disable user services..."
   systemctl --user mask --now $DISABLE_USER_SERVICES
@@ -122,19 +122,16 @@ main () {
   echo_sleep "Update GRUB..."
   sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
   if [ "$DISTRO" = "debian" ]; then
-  sudo sed -i 's/quiet/quiet loglevel=3 systemd.show_status=auto mitigations=off amd_iommu=off nowatchdog/' /etc/default/grub
-  echo 'GRUB_BACKGROUND=""' | sudo tee -a /etc/default/grub
+    sudo sed -i 's/quiet/quiet loglevel=3 systemd.show_status=auto mitigations=off amd_iommu=off nowatchdog/' /etc/default/grub
+    echo 'GRUB_BACKGROUND=""' | sudo tee -a /etc/default/grub
   elif [ "$DISTRO" = "ubuntu" ]; then
-  sudo sed -i 's/quiet splash/quiet splash mitigations=off amd_iommu=off/' /etc/default/grub
+    sudo sed -i 's/quiet splash/quiet splash mitigations=off amd_iommu=off/' /etc/default/grub
   fi
   sudo update-grub
 
   echo_sleep "Setup systemd tweaks..."
   sudo sed -i 's/#SystemMaxUse=/SystemMaxUse=10M/' /etc/systemd/journald.conf
   sudo sed -i 's/#RuntimeMaxUse=/RuntimeMaxUse=10M/' /etc/systemd/journald.conf
-
-  #echo_sleep "Disable Bluetooth auto-enable"
-  #sudo sed -i 's/AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
 
   echo_sleep "Disable Bluetooth hardware volume..."
   sudo mkdir -p /etc/wireplumber/bluetooth.lua.d
@@ -169,7 +166,11 @@ main () {
 
   echo_sleep "Load dconf..."
   dconf load / < "./$DISTRO/dconf.conf"
-
+  
+  echo_sleep "Setup autologin..."
+  sudo sed -i "s/#  AutomaticLoginEnable/AutomaticLoginEnable/" /etc/gdm3/daemon.conf
+  sudo sed -i "s/#  AutomaticLogin = user1/AutomaticLogin = $USER/" /etc/gdm3/daemon.conf
+  
   echo_sleep "Fetch dotfiles..."
   cd "/home/$USER"
   git init

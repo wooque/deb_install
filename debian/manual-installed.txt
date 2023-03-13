@@ -56,7 +56,6 @@ file-roller
 findutils
 firmware-amd-graphics
 firmware-iwlwifi
-firmware-misc-nonfree
 firmware-realtek
 fonts-cantarell
 fonts-liberation
@@ -107,6 +106,7 @@ gvfs-fuse
 gzip
 hostname
 htop
+hunspell-en-us
 ifupdown
 imagemagick
 inetutils-telnet
@@ -132,6 +132,7 @@ libattr1
 libaudit1
 libaudit-common
 libblkid1
+libbpf1
 libbsd0
 libbz2-1.0
 libbz2-dev
@@ -145,7 +146,6 @@ libcom-err2
 libcrypt1
 libcryptsetup12
 libdb5.3
-libdbus-glib-1-2
 libdebconfclient0
 libdevmapper1.02.1
 libedit2
@@ -180,7 +180,6 @@ liblzma-dev
 libmd0
 libmnl0
 libmount1
-libncurses6
 libncurses-dev
 libncursesw6
 libnettle8
@@ -196,8 +195,8 @@ libpam-modules-bin
 libpam-runtime
 libpam-systemd
 libpcre2-8-0
-libpcre3
 libpopt0
+libproc2-0
 libproxy1-plugin-gsettings
 libproxy1-plugin-networkmanager
 libproxy1-plugin-webkit
@@ -215,7 +214,6 @@ libsemanage-common
 libsepol2
 libslang2
 libsmartcols1
-libspa-0.2-bluetooth
 libsqlite3-dev
 libss2
 libssl3
@@ -242,7 +240,6 @@ locales
 login
 logrotate
 logsave
-lsb-base
 lsof
 man-db
 manpages
@@ -270,11 +267,13 @@ passwd
 pciutils
 perl
 perl-base
-pipewire-pulse
+pipewire-audio
 powertop
 procps
 python3-reportbug
+qemu-system-gui
 qemu-system-x86
+qemu-utils
 radeontop
 ranger
 readline-common
@@ -323,7 +322,6 @@ wamerican
 wget
 whiptail
 wireless-tools
-wireplumber
 wpasupplicant
 xdg-desktop-portal-gnome
 xdg-user-dirs-gtk
