@@ -54,6 +54,7 @@ ffmpeg
 file
 file-roller
 findutils
+firefox-esr
 firmware-amd-graphics
 firmware-iwlwifi
 firmware-realtek
@@ -84,6 +85,7 @@ gnome-session
 gnome-settings-daemon
 gnome-shell
 gnome-shell-extension-appindicator
+gnome-shell-extension-bluetooth-quick-connect
 gnome-terminal
 gnome-text-editor
 gnome-themes-extra

@@ -10,7 +10,7 @@ id=$(grep ^ID= /etc/os-release)
 DISTRO=${id/ID=/}
 
 INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-emoji"
-INSTALL_GNOME="gnome-shell-extension-appindicator gnome-tweaks gstreamer1.0-vaapi"
+INSTALL_GNOME="gnome-shell-extension-appindicator gnome-shell-extension-bluetooth-quick-connect gnome-tweaks gstreamer1.0-vaapi"
 INSTALL_GUI="gimp meld mpv"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync samba tlp yt-dlp unattended-upgrades"
 INSTALL_DEV="docker.io docker-compose git gitk"
@@ -25,13 +25,13 @@ if [ "$DISTRO" = "debian" ]; then
   # removing plymouth speeds up boot
   REMOVE_SYSTEM="plymouth $REMOVE_SYSTEM"
 fi
-REMOVE_APPS="deja-dup firefox-esr remmina shotwell simple-scan synaptic thunderbird"
+REMOVE_APPS="deja-dup remmina shotwell simple-scan synaptic thunderbird"
 REMOVE_LIBREOFFICE_EXTRAS="libreoffice-help-en-us mythes-en-us hyphen-en-us"
 REMOVE_PACKAGES="$REMOVE_SYSTEM $REMOVE_GNOME $REMOVE_GAMES $REMOVE_APPS $REMOVE_LIBREOFFICE_EXTRAS"
 
 ENABLE_SERVICES="tlp"
 
-DISABLE_PREINSTALLED="avahi-daemon bolt cups cups-browsed ModemManager switcheroo-control NetworkManager-wait-online"
+DISABLE_PREINSTALLED="avahi-daemon bolt cups cups-browsed ModemManager switcheroo-control"
 if [ "$DISTRO" = "ubuntu" ]; then
   DISABLE_PREINSTALLED="$DISABLE_PREINSTALLED kerneloops rsyslog"
 fi
