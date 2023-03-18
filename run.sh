@@ -10,7 +10,7 @@ id=$(grep ^ID= /etc/os-release)
 DISTRO=${id/ID=/}
 
 INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-emoji"
-INSTALL_GNOME="gnome-shell-extension-appindicator gnome-shell-extension-bluetooth-quick-connect gnome-tweaks gstreamer1.0-vaapi"
+INSTALL_GNOME="gnome-shell-extension-appindicator gnome-shell-extension-bluetooth-quick-connect gnome-tweaks gstreamer1.0-vaapi libavif-gdk-pixbuf"
 INSTALL_GUI="gimp meld mpv"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync samba tlp yt-dlp unattended-upgrades"
 INSTALL_DEV="docker.io docker-compose git gitk"
@@ -73,7 +73,7 @@ asdf-vm () {
 
 dropbox () {
   version="2022.12.05"
-  wget "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_${version}_amd64.deb" -O /tmp/dropbox.deb
+  wget --header "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0" "https://linux.dropbox.com/packages/ubuntu/dropbox_${version}_amd64.deb" -O /tmp/dropbox.deb
   sudo apt install /tmp/dropbox.deb
   sudo apt update && sudo apt upgrade
   apt-key export 5044912E | sudo gpg --dearmour -o /usr/share/keyrings/dropbox.gpg
@@ -94,7 +94,7 @@ signal-desktop () {
 
 main () {
   echo_sleep "Install packages..."
-  sudo apt install --no-install-recommends $INSTALL_PACKAGES
+  sudo apt install --no-install-recommends --purge $INSTALL_PACKAGES
 
   for app in $INSTALL_EXTRA; do
     echo_sleep "Install $app..."

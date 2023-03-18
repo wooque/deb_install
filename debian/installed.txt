@@ -385,6 +385,7 @@ libavdevice59
 libavfilter8
 libavformat59
 libavif15
+libavif-gdk-pixbuf
 libavutil57
 libayatana-appindicator3-1
 libayatana-ido3-0.4-0

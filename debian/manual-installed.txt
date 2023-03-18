@@ -133,6 +133,7 @@ libatk-adaptor
 libattr1
 libaudit1
 libaudit-common
+libavif-gdk-pixbuf
 libblkid1
 libbpf1
 libbsd0
