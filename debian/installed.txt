@@ -740,7 +740,7 @@ libjack-jackd2-0
 libjansson4
 libjavascriptcoregtk-4.0-18
 libjavascriptcoregtk-4.1-0
-libjavascriptcoregtk-5.0-0
+libjavascriptcoregtk-6.0-1
 libjbig0
 libjbig2dec0
 libjemalloc2
@@ -1181,7 +1181,7 @@ libwayland-server0
 libwbclient0
 libwebkit2gtk-4.0-37
 libwebkit2gtk-4.1-0
-libwebkit2gtk-5.0-0
+libwebkitgtk-6.0-4
 libwebp7
 libwebpdemux2
 libwebpmux3
