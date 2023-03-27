@@ -233,6 +233,7 @@ gnome-initial-setup
 gnome-keyring
 gnome-keyring-pkcs11
 gnome-menus
+gnome-power-manager
 gnome-remote-desktop
 gnome-session
 gnome-session-bin

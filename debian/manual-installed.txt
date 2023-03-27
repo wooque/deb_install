@@ -80,6 +80,7 @@ gnome-disk-utility
 gnome-initial-setup
 gnome-keyring
 gnome-menus
+gnome-power-manager
 gnome-remote-desktop
 gnome-session
 gnome-settings-daemon
