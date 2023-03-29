@@ -944,6 +944,7 @@ libpipewire-0.3-modules
 libpixman-1-0
 libplacebo208
 libplist3
+libplymouth5
 libpmem1
 libpng16-16
 libpocketsphinx3
@@ -1365,6 +1366,7 @@ pipewire-audio
 pipewire-bin
 pipewire-pulse
 pkexec
+plymouth
 pocketsphinx-en-us
 polkitd
 poppler-data

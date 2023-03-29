@@ -272,6 +272,7 @@ pciutils
 perl
 perl-base
 pipewire-audio
+plymouth
 powertop
 procps
 python3-reportbug

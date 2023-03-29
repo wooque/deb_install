@@ -21,10 +21,6 @@ INSTALL_PACKAGES="amd64-microcode $INSTALL_FONTS $INSTALL_GNOME $INSTALL_GUI $IN
 REMOVE_GNOME="baobab cheese evolution-data-server fwupd gnome-calendar gnome-characters gnome-clocks gnome-font-viewer gnome-games gnome-logs gnome-maps gnome-music gnome-online-accounts gnome-shell-extensions gnome-software gnome-sound-recorder gnome-sushi gnome-system-monitor gnome-weather ibus totem yelp"
 REMOVE_GAMES="aisleriot gnome-mahjongg gnome-mines gnome-sudoku"
 REMOVE_SYSTEM="low-memory-monitor needrestart snapd systemd-oomd"
-if [ "$DISTRO" = "debian" ]; then
-  # removing plymouth speeds up boot
-  REMOVE_SYSTEM="plymouth $REMOVE_SYSTEM"
-fi
 REMOVE_APPS="deja-dup remmina shotwell simple-scan synaptic thunderbird"
 REMOVE_LIBREOFFICE_EXTRAS="libreoffice-help-en-us mythes-en-us hyphen-en-us"
 REMOVE_PACKAGES="$REMOVE_SYSTEM $REMOVE_GNOME $REMOVE_GAMES $REMOVE_APPS $REMOVE_LIBREOFFICE_EXTRAS"
@@ -121,12 +117,7 @@ main () {
 
   echo_sleep "Update GRUB..."
   sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
-  if [ "$DISTRO" = "debian" ]; then
-    sudo sed -i 's/quiet/quiet loglevel=3 systemd.show_status=auto mitigations=off amd_iommu=off nowatchdog/' /etc/default/grub
-    echo 'GRUB_BACKGROUND=""' | sudo tee -a /etc/default/grub
-  elif [ "$DISTRO" = "ubuntu" ]; then
-    sudo sed -i 's/quiet splash/quiet splash mitigations=off amd_iommu=off/' /etc/default/grub
-  fi
+  sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3 mitigations=off amd_iommu=off nowatchdog"/' /etc/default/grub
   sudo update-grub
 
   echo_sleep "Setup systemd tweaks..."
@@ -166,11 +157,11 @@ main () {
 
   echo_sleep "Load dconf..."
   dconf load / < "./$DISTRO/dconf.conf"
-  
+
   echo_sleep "Setup autologin..."
   sudo sed -i "s/#  AutomaticLoginEnable/AutomaticLoginEnable/" /etc/gdm3/daemon.conf
   sudo sed -i "s/#  AutomaticLogin = user1/AutomaticLogin = $USER/" /etc/gdm3/daemon.conf
-  
+
   echo_sleep "Fetch dotfiles..."
   cd "/home/$USER"
   git init
