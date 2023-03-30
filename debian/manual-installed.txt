@@ -11,6 +11,7 @@ base-files
 base-passwd
 bash
 bash-completion
+beekeeper-studio
 bind9-dnsutils
 bind9-host
 brave-browser

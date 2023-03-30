@@ -15,7 +15,7 @@ INSTALL_GUI="gimp meld mpv"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync samba tlp yt-dlp unattended-upgrades"
 INSTALL_DEV="docker.io docker-compose git gitk"
 INSTALL_BUILD="build-essential zlib1g-dev libbz2-dev libncurses-dev libffi-dev libreadline-dev libssl-dev libsqlite3-dev liblzma-dev"
-INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm dropbox"
+INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm beekeeper-studio dropbox"
 INSTALL_PACKAGES="amd64-microcode $INSTALL_FONTS $INSTALL_GNOME $INSTALL_GUI $INSTALL_UTILS $INSTALL_DEV $INSTALL_BUILD"
 
 REMOVE_GNOME="baobab cheese evolution-data-server fwupd gnome-calendar gnome-characters gnome-clocks gnome-font-viewer gnome-games gnome-logs gnome-maps gnome-music gnome-online-accounts gnome-shell-extensions gnome-software gnome-sound-recorder gnome-sushi gnome-system-monitor gnome-weather ibus totem yelp"
@@ -86,6 +86,12 @@ signal-desktop () {
   wget -O- https://updates.signal.org/desktop/apt/keys.asc | sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
   echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal-xenial.list
   sudo apt update && sudo apt install signal-desktop
+}
+
+beekeeper-studio () {
+  curl https://deb.beekeeperstudio.io/beekeeper.key | sudo gpg --dearmor -o /usr/share/keyrings/beekeeper-studio.gpg
+  echo "deb [signed-by=/usr/share/keyrings/beekeeper-studio.gpg] https://deb.beekeeperstudio.io stable main" | sudo tee /etc/apt/sources.list.d/beekeeper-studio-app.list
+  sudo apt update && sudo apt install beekeeper-studio
 }
 
 main () {
