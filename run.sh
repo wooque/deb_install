@@ -10,7 +10,7 @@ id=$(grep ^ID= /etc/os-release)
 DISTRO=${id/ID=/}
 
 INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-emoji"
-INSTALL_GNOME="gnome-shell-extension-appindicator gnome-shell-extension-bluetooth-quick-connect gnome-tweaks gnome-power-manager gstreamer1.0-vaapi libavif-gdk-pixbuf"
+INSTALL_GNOME="gnome-shell-extension-appindicator gnome-shell-extension-bluetooth-quick-connect gnome-tweaks gstreamer1.0-vaapi libavif-gdk-pixbuf"
 INSTALL_GUI="gimp meld mpv"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync samba tlp yt-dlp unattended-upgrades"
 INSTALL_DEV="docker.io docker-compose git gitk"
