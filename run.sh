@@ -12,15 +12,15 @@ DISTRO=${id/ID=/}
 INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-emoji"
 INSTALL_GNOME="gnome-shell-extension-appindicator gnome-shell-extension-bluetooth-quick-connect gnome-tweaks gstreamer1.0-vaapi libavif-gdk-pixbuf"
 INSTALL_GUI="gimp meld mpv"
-INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync samba tlp yt-dlp unattended-upgrades"
+INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync samba tlp yt-dlp unattended-upgrades powerstat linux-cpupower"
 INSTALL_DEV="docker.io docker-compose git gitk"
 INSTALL_BUILD="build-essential zlib1g-dev libbz2-dev libncurses-dev libffi-dev libreadline-dev libssl-dev libsqlite3-dev liblzma-dev"
-INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm beekeeper-studio dropbox"
+INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm beekeeper-studio dropbox nicotine google-chrome-stable"
 INSTALL_PACKAGES="amd64-microcode $INSTALL_FONTS $INSTALL_GNOME $INSTALL_GUI $INSTALL_UTILS $INSTALL_DEV $INSTALL_BUILD"
 
 REMOVE_GNOME="baobab cheese evolution-data-server fwupd gnome-calendar gnome-characters gnome-clocks gnome-font-viewer gnome-games gnome-logs gnome-maps gnome-music gnome-online-accounts gnome-shell-extensions gnome-software gnome-sound-recorder gnome-sushi gnome-system-monitor gnome-weather ibus totem yelp"
 REMOVE_GAMES="aisleriot gnome-mahjongg gnome-mines gnome-sudoku"
-REMOVE_SYSTEM="low-memory-monitor needrestart snapd systemd-oomd"
+REMOVE_SYSTEM="plymouth low-memory-monitor snapd systemd-oomd"
 REMOVE_APPS="deja-dup remmina shotwell simple-scan synaptic thunderbird"
 REMOVE_LIBREOFFICE_EXTRAS="libreoffice-help-en-us mythes-en-us hyphen-en-us"
 REMOVE_PACKAGES="$REMOVE_SYSTEM $REMOVE_GNOME $REMOVE_GAMES $REMOVE_APPS $REMOVE_LIBREOFFICE_EXTRAS"
@@ -94,6 +94,17 @@ beekeeper-studio () {
   sudo apt update && sudo apt install beekeeper-studio
 }
 
+nicotine () {
+  curl "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x6E60F93DCD3E27CBE2F0CCA16CEB6050A30E5769" | sudo gpg --dearmor  -o /etc/apt/trusted.gpg.d/nicotine-team-ubuntu-stable.gpg
+  echo "deb https://ppa.launchpadcontent.net/nicotine-team/stable/ubuntu jammy main" | sudo tee /etc/apt/sources.list.d/nicotine-team-ubuntu-stable.list
+  sudo apt update && sudo apt install nicotine
+}
+
+google-chrome-stable () {
+  wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O /tmp/chrome.deb
+  sudo apt install /tmp/chrome.deb
+}
+
 main () {
   echo_sleep "Install packages..."
   sudo apt install --no-install-recommends --purge $INSTALL_PACKAGES
@@ -123,8 +134,13 @@ main () {
 
   echo_sleep "Update GRUB..."
   sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
-  sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3 mitigations=off amd_iommu=off nowatchdog"/' /etc/default/grub
+  sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=3 systemd.show_status=false mitigations=off amd_iommu=off nowatchdog"/' /etc/default/grub
+  echo 'GRUB_BACKGROUND=""' | sudo tee -a /etc/default/grub
   sudo update-grub
+
+  echo_sleep "Update initramfs..."
+  sudo sed -i 's/MODULES=.*/MODULES=dep/' /etc/initramfs-tools/initramfs.conf
+  sudo update-initramfs -u
 
   echo_sleep "Setup systemd tweaks..."
   sudo sed -i 's/#SystemMaxUse=/SystemMaxUse=10M/' /etc/systemd/journald.conf

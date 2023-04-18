@@ -92,6 +92,7 @@ gnome-text-editor
 gnome-themes-extra
 gnome-tweaks
 gnome-user-share
+google-chrome-stable
 gpgv
 grep
 groff-base
@@ -238,6 +239,7 @@ libuuid1
 libxtables12
 libxxhash0
 libzstd1
+linux-cpupower
 linux-image-amd64
 lm-sensors
 locales
@@ -264,6 +266,7 @@ netbase
 netcat-traditional
 network-manager-gnome
 nftables
+nicotine
 nodejs
 openssh-client
 orca
@@ -272,7 +275,7 @@ pciutils
 perl
 perl-base
 pipewire-audio
-plymouth
+powerstat
 powertop
 procps
 python3-reportbug

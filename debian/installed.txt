@@ -255,6 +255,7 @@ gnome-user-share
 gnupg
 gnupg-l10n
 gnupg-utils
+google-chrome-stable
 gpg
 gpg-agent
 gpgconf
@@ -465,6 +466,7 @@ libcolord2
 libcolord-gtk4-1
 libcolorhug2
 libcom-err2
+libcpupower1
 libcrack2
 libcrypt1
 libcrypt-dev
@@ -944,7 +946,6 @@ libpipewire-0.3-modules
 libpixman-1-0
 libplacebo208
 libplist3
-libplymouth5
 libpmem1
 libpng16-16
 libpocketsphinx3
@@ -1288,6 +1289,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
+linux-cpupower
 linux-image-6.1.0-7-amd64
 linux-image-amd64
 linux-libc-dev
@@ -1335,6 +1337,7 @@ netcat-traditional
 network-manager
 network-manager-gnome
 nftables
+nicotine
 nodejs
 ntfs-3g
 ocl-icd-libopencl1
@@ -1366,11 +1369,11 @@ pipewire-audio
 pipewire-bin
 pipewire-pulse
 pkexec
-plymouth
 pocketsphinx-en-us
 polkitd
 poppler-data
 poppler-utils
+powerstat
 powertop
 ppp
 procps
@@ -1403,6 +1406,7 @@ python3-docker
 python3-dockerpty
 python3-docopt
 python3-dotenv
+python3-gdbm
 python3-gi
 python3-gi-cairo
 python3-httplib2
