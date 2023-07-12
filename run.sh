@@ -18,7 +18,7 @@ libreoffice-calc libreoffice-impress transmission-gtk exfalso python3-musicbrain
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu
 neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync
 samba tlp yt-dlp unattended-upgrades upower rclone"
-INSTALL_DEV="docker.io docker-compose git gitk"
+INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools"
 INSTALL_EXTRA="viber code signal-desktop nodejs asdf-vm beekeeper-studio
 nicotine google-chrome-stable firefox dropbox"
 INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
@@ -47,7 +47,7 @@ brave-browser () {
 }
 
 viber () {
-  ai libgstreamer-plugins-bad1.0-0 libopengl0
+  ai libgstreamer-plugins-bad1.0-0 libopengl0 libxcb-image0 libxcb-keysyms1
   wget "https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb" -O /tmp/viber.deb
   ai /tmp/viber.deb
 }

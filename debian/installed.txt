@@ -579,6 +579,7 @@ libnpth0
 libnsl2
 libnspr4
 libnss3
+libnss3-tools
 libnss-systemd
 libnuma1
 libnumbertext-1.0-0
@@ -829,6 +830,8 @@ libxcb-dri2-0
 libxcb-dri3-0
 libxcb-glx0
 libxcb-icccm4
+libxcb-image0
+libxcb-keysyms1
 libxcb-present0
 libxcb-randr0
 libxcb-render0
@@ -913,6 +916,7 @@ media-types
 meld
 mesa-va-drivers
 mime-support
+mkcert
 mokutil
 mount
 mousepad
