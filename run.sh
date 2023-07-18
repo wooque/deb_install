@@ -26,6 +26,7 @@ xdg-desktop-portal-wlr grim slurp jq brightnessctl brightness-udev gammastep
 thunar thunar-archive-plugin tumbler pavucontrol cmus cmus-plugin-ffmpeg ncal"
 INSTALL_SWAY_DESKTOP="pipewire-audio rtkit network-manager xwayland gvfs gvfs-backends eject dconf-cli
 gnome-keyring gnome-icon-theme playerctl libdbus-glib-1-2"
+INSTALL_BACKPORTS="yt-dlp"
 INSTALL_PACKAGES="$INSTALL_FONTS $INSTALL_GUI $INSTALL_UTILS
 $INSTALL_DEV $INSTALL_SWAY_BASE $INSTALL_SWAY_DESKTOP"
 
@@ -133,6 +134,11 @@ main () {
   echo_sleep "Install packages..."
   ai $INSTALL_PACKAGES
   sudo dpkg-reconfigure unattended-upgrades
+
+  echo_sleep "Setup and install backports..."
+  echo "deb http://deb.debian.org/debian bookworm-backports main non-free-firmware" | sudo tee -a /etc/apt/sources.list
+  sudo apt update
+  sudo apt install --no-install-recommends -t bookworm-backports $INSTALL_BACKPORTS
 
   echo_sleep "Fix network..."
   if [ -f /etc/network/interfaces ]; then
