@@ -1,3 +1,4 @@
+adb
 adduser
 amd64-microcode
 apt
@@ -47,6 +48,7 @@ dropbox
 e2fsprogs
 eject
 exfalso
+fastboot
 fdisk
 ffmpeg
 file
@@ -235,6 +237,8 @@ nicotine
 nodejs
 openssh-client
 os-prober
+otpclient
+p7zip-full
 passwd
 pavucontrol
 pciutils
@@ -286,7 +290,6 @@ tzdata
 ucf
 udev
 unattended-upgrades
-unzip
 upower
 usbutils
 usr-is-merged

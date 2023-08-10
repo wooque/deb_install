@@ -1,9 +1,17 @@
+adb
 adduser
 adwaita-icon-theme
 alsa-topology-conf
 alsa-ucm-conf
 amd64-microcode
 anacron
+android-libbase
+android-libboringssl
+android-libcutils
+android-liblog
+android-libsparse
+android-libziparchive
+android-sdk-platform-tools-common
 apparmor
 apt
 apt-listchanges
@@ -82,6 +90,7 @@ eject
 emacsen-common
 exfalso
 exo-utils
+fastboot
 fdisk
 ffmpeg
 file
@@ -243,6 +252,7 @@ libayatana-appindicator3-1
 libayatana-ido3-0.4-0
 libayatana-indicator3-7
 libbabl-0.1-0
+libbaseencode1
 libblas3
 libblkid1
 libblockdev2
@@ -301,6 +311,7 @@ libcodec2-1.0
 libcolamd2
 libcolord2
 libcom-err2
+libcotp12
 libcrypt1
 libcryptsetup12
 libcups2
@@ -649,6 +660,7 @@ libpython3.11
 libpython3.11-minimal
 libpython3.11-stdlib
 libpython3-stdlib
+libqrencode4
 libquadmath0
 libqxp-0.0-0
 librabbitmq4
@@ -887,6 +899,7 @@ libyajl2
 libyaml-0-2
 libyuv0
 libz3-4
+libzbar0
 libzimg2
 libzmf-0.0-0
 libzmq5
@@ -895,7 +908,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
-linux-image-6.1.0-10-amd64
+linux-image-6.1.0-12-amd64
 linux-image-amd64
 lm-sensors
 locales
@@ -938,8 +951,11 @@ ocl-icd-libopencl1
 openssh-client
 openssl
 os-prober
+otpclient
 p11-kit
 p11-kit-modules
+p7zip
+p7zip-full
 parted
 passwd
 patch
@@ -1083,7 +1099,6 @@ udev
 udisks2
 unattended-upgrades
 uno-libs-private
-unzip
 upower
 ure
 usbutils
