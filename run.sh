@@ -23,7 +23,7 @@ INSTALL_EXTRA="viber code signal-desktop nodejs asdf-vm beekeeper-studio
 nicotine google-chrome-stable firefox dropbox"
 INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
 xdg-desktop-portal-wlr grim slurp jq brightnessctl brightness-udev gammastep
-thunar thunar-archive-plugin tumbler pavucontrol cmus cmus-plugin-ffmpeg ncal"
+thunar thunar-archive-plugin tumbler pavucontrol cmus cmus-plugin-ffmpeg ncal python3-i3ipc"
 INSTALL_SWAY_DESKTOP="pipewire-audio rtkit network-manager xwayland gvfs gvfs-backends eject dconf-cli
 gnome-keyring gnome-icon-theme playerctl libdbus-glib-1-2"
 INSTALL_BACKPORTS="yt-dlp"

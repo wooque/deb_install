@@ -1006,6 +1006,7 @@ python3-gdbm
 python3-gi
 python3-gi-cairo
 python3-httplib2
+python3-i3ipc
 python3-idna
 python3-jsonschema
 python3-ldb
@@ -1030,6 +1031,7 @@ python3-texttable
 python3-urllib3
 python3-websocket
 python3-websockets
+python3-xlib
 python3-yaml
 python-apt-common
 qemu-system-common

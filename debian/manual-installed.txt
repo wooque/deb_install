@@ -248,6 +248,7 @@ pipewire-audio
 playerctl
 powertop
 procps
+python3-i3ipc
 python3-musicbrainzngs
 python3-reportbug
 qemu-system-gui
