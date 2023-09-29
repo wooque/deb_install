@@ -842,8 +842,6 @@ libxcb-dri2-0
 libxcb-dri3-0
 libxcb-glx0
 libxcb-icccm4
-libxcb-image0
-libxcb-keysyms1
 libxcb-present0
 libxcb-randr0
 libxcb-render0

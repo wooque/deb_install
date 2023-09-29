@@ -48,7 +48,7 @@ brave-browser () {
 }
 
 viber () {
-  ai libgstreamer-plugins-bad1.0-0 libopengl0 libxcb-image0 libxcb-keysyms1
+  ai libgstreamer-plugins-bad1.0-0 libopengl0
   wget "https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb" -O /tmp/viber.deb
   ai /tmp/viber.deb
 }

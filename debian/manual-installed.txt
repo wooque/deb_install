@@ -197,8 +197,6 @@ libtirpc-common
 libudev1
 libunistring2
 libuuid1
-libxcb-image0
-libxcb-keysyms1
 libxtables12
 libxxhash0
 libzstd1
