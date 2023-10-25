@@ -20,7 +20,7 @@ neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rs
 samba tlp yt-dlp unattended-upgrades upower rclone adb fastboot"
 INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools"
 INSTALL_EXTRA="viber code signal-desktop nodejs asdf-vm beekeeper-studio
-nicotine google-chrome-stable firefox dropbox"
+nicotine google-chrome-stable firefox dropbox diff2html"
 INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
 xdg-desktop-portal-wlr grim slurp jq brightnessctl brightness-udev gammastep
 thunar thunar-archive-plugin tumbler pavucontrol cmus cmus-plugin-ffmpeg ncal python3-i3ipc"
@@ -89,6 +89,10 @@ nodejs () {
     | sudo tee /etc/apt/sources.list.d/nodesource.list
   sudo apt update && ai nodejs
   sudo npm -g install yarn
+}
+
+diff2html () {
+  sudo npm -g install diff2html-cli
 }
 
 signal-desktop () {
