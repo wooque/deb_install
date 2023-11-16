@@ -175,6 +175,7 @@ libreoffice-calc
 libreoffice-gtk3
 libreoffice-impress
 libreoffice-writer
+librsvg2-bin
 libseccomp2
 libselinux1
 libsemanage2

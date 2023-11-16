@@ -15,7 +15,7 @@ fonts-dejavu-core"
 INSTALL_GUI="gimp gtk2-engines-pixbuf meld mpv mesa-va-drivers mate-calc mousepad ristretto
 webp-pixbuf-loader xarchiver zip p7zip-full zathura libreoffice-gtk3 libreoffice-writer
 libreoffice-calc libreoffice-impress transmission-gtk exfalso python3-musicbrainzngs otpclient"
-INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick lm-sensors ncdu
+INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick librsvg2-bin lm-sensors ncdu
 neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync
 samba tlp yt-dlp unattended-upgrades upower rclone adb fastboot"
 INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools"

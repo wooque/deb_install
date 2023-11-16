@@ -684,6 +684,7 @@ libreoffice-writer
 librevenge-0.0-0
 librist4
 librsvg2-2
+librsvg2-bin
 librsvg2-common
 librtmp1
 librubberband2
