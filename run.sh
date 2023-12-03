@@ -17,7 +17,7 @@ webp-pixbuf-loader xarchiver zip p7zip-full zathura libreoffice-gtk3 libreoffice
 libreoffice-calc libreoffice-impress transmission-gtk exfalso python3-musicbrainzngs otpclient"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick librsvg2-bin lm-sensors ncdu
 neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync
-samba tlp yt-dlp unattended-upgrades upower rclone adb fastboot"
+samba tlp yt-dlp unattended-upgrades upower rclone ripgrep adb fastboot"
 INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools"
 INSTALL_EXTRA="viber code signal-desktop nodejs asdf-vm beekeeper-studio
 nicotine google-chrome-stable firefox dropbox diff2html"

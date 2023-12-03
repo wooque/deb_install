@@ -258,6 +258,7 @@ ranger
 rclone
 readline-common
 reportbug
+ripgrep
 ristretto
 rsync
 rtkit
