@@ -29,6 +29,8 @@ bind9-host
 bind9-libs
 bluetooth
 bluez
+brave-browser
+brave-keyring
 brightnessctl
 brightness-udev
 bsdextrautils
@@ -1071,6 +1073,7 @@ sway
 swaybg
 swayidle
 swaylock
+syncthing
 systemd
 systemd-sysv
 systemd-timesyncd

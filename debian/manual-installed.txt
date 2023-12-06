@@ -12,6 +12,7 @@ bash-completion
 beekeeper-studio
 bind9-dnsutils
 bind9-host
+brave-browser
 brightnessctl
 brightness-udev
 bsdutils
@@ -272,6 +273,7 @@ sudo
 sway
 swayidle
 swaylock
+syncthing
 systemd
 systemd-sysv
 systemd-timesyncd
