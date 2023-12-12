@@ -59,7 +59,7 @@ code () {
 }
 
 asdf-vm () {
-  local version="0.12.0"
+  local version="0.13.1"
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v${version}
   . "$HOME/.asdf/asdf.sh"
   asdf plugin-add nodejs
@@ -67,25 +67,17 @@ asdf-vm () {
 }
 
 dropbox () {
-  local version="2022.12.05"
-  wget --header "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0" \
-    "https://linux.dropbox.com/packages/ubuntu/dropbox_${version}_amd64.deb" -O /tmp/dropbox.deb
+  local version="2023.09.06"
+  wget --header "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" \
+    "https://www.dropbox.com/download?dl=packages/debian/dropbox_${version}_amd64.deb" -O /tmp/dropbox.deb
   ai /tmp/dropbox.deb
-
-  sudo apt update || true
-  sudo apt upgrade
-
-  local key=/usr/share/keyrings/dropbox.gpg
-  apt-key export 5044912E | gpgd $key
-  sudo sed -i "s/arch=i386,amd64]/arch=i386,amd64 signed-by=${key//\//\\\/}]/" \
-    /etc/apt/sources.list.d/dropbox.list
 }
 
 nodejs () {
   local version=18
-  local key=/usr/share/keyrings/nodesource.gpg
-  wget -O- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpgd $key
-  echo "deb [signed-by=$key] https://deb.nodesource.com/node_$version.x bookworm main" \
+  local key=/etc/apt/keyrings/nodesource.gpg
+  wget -O- https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpgd $key
+  echo "deb [signed-by=$key] https://deb.nodesource.com/node_$version.x nodistro main" \
     | sudo tee /etc/apt/sources.list.d/nodesource.list
   sudo apt update && ai nodejs
   sudo npm -g install yarn
@@ -104,7 +96,7 @@ signal-desktop () {
 }
 
 beekeeper-studio () {
-  local key=/usr/share/keyrings/beekeeper-studio.gpg
+  local key=/etc/apt/keyrings/beekeeper-studio.gpg
   wget -O- https://deb.beekeeperstudio.io/beekeeper.key | gpgd $key
   echo "deb [signed-by=$key] https://deb.beekeeperstudio.io stable main" \
     | sudo tee /etc/apt/sources.list.d/beekeeper-studio-app.list
@@ -112,7 +104,7 @@ beekeeper-studio () {
 }
 
 nicotine () {
-  local key=/usr/share/keyrings/nicotine-team-ubuntu-stable.gpg
+  local key=/etc/apt/keyrings/nicotine-team-ubuntu-stable.gpg
   wget -O- "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x6E60F93DCD3E27CBE2F0CCA16CEB6050A30E5769" \
     | gpgd $key
   echo "deb [signed-by=$key] https://ppa.launchpadcontent.net/nicotine-team/stable/ubuntu jammy main" \
