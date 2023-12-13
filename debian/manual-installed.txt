@@ -254,6 +254,7 @@ python3-reportbug
 qemu-system-gui
 qemu-system-x86
 qemu-utils
+qpdf
 radeontop
 ranger
 rclone

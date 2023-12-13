@@ -662,6 +662,7 @@ libpython3.11
 libpython3.11-minimal
 libpython3.11-stdlib
 libpython3-stdlib
+libqpdf29
 libqrencode4
 libquadmath0
 libqxp-0.0-0
@@ -909,7 +910,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
-linux-image-6.1.0-15-amd64
+linux-image-6.1.0-16-amd64
 linux-image-amd64
 lm-sensors
 locales
@@ -1040,6 +1041,7 @@ qemu-system-data
 qemu-system-gui
 qemu-system-x86
 qemu-utils
+qpdf
 radeontop
 ranger
 rclone
