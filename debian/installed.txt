@@ -910,7 +910,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
-linux-image-6.1.0-16-amd64
+linux-image-6.1.0-17-amd64
 linux-image-amd64
 lm-sensors
 locales

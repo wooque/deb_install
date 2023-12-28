@@ -20,7 +20,7 @@ neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rs
 samba tlp yt-dlp unattended-upgrades upower rclone syncthing ripgrep adb fastboot"
 INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools"
 INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm beekeeper-studio
-nicotine google-chrome-stable firefox dropbox diff2html"
+nicotine google-chrome-stable firefox dropbox"
 INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
 xdg-desktop-portal-wlr grim slurp jq brightnessctl brightness-udev gammastep
 thunar thunar-archive-plugin tumbler pavucontrol cmus cmus-plugin-ffmpeg ncal python3-i3ipc"
@@ -74,17 +74,15 @@ dropbox () {
 }
 
 nodejs () {
-  local version=18
+  local version=20
   local key=/etc/apt/keyrings/nodesource.gpg
   wget -O- https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpgd $key
   echo "deb [signed-by=$key] https://deb.nodesource.com/node_$version.x nodistro main" \
     | sudo tee /etc/apt/sources.list.d/nodesource.list
   sudo apt update && ai nodejs
-  sudo npm -g install yarn
-}
 
-diff2html () {
-  sudo npm -g install diff2html-cli
+  # install additional nodejs tools
+  sudo npm -g install yarn diff2html-cli
 }
 
 signal-desktop () {
