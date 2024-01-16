@@ -125,6 +125,7 @@ libdb5.3
 libdbus-glib-1-2
 libdebconfclient0
 libdevmapper1.02.1
+libdisplay-info1
 libedit2
 libelf1
 libext2fs2
@@ -147,6 +148,7 @@ libkeyutils1
 libkmod2
 libkrb5-3
 libkrb5support0
+libliftoff0
 liblocale-gettext-perl
 liblockfile-bin
 liblz4-1
@@ -199,6 +201,9 @@ libtirpc-common
 libudev1
 libunistring2
 libuuid1
+libwayland-client0
+libwayland-server0
+libwlroots12
 libxtables12
 libxxhash0
 libzstd1

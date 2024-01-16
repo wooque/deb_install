@@ -338,6 +338,7 @@ libdeflate0
 libdevmapper1.02.1
 libdiscid0
 libdiscover2
+libdisplay-info1
 libdrm2
 libdrm-amdgpu1
 libdrm-common
@@ -521,6 +522,7 @@ libldap-2.5-0
 libldap-common
 libldb2
 liblerc4
+libliftoff0
 liblilv-0-0
 libllvm15
 liblmdb0
@@ -827,7 +829,7 @@ libwebpdemux2
 libwebpmux3
 libwebrtc-audio-processing1
 libwireplumber-0.4-0
-libwlroots11
+libwlroots12
 libwmf-0.2-7
 libwmflite-0.2-7
 libwpd-0.10-10
@@ -844,6 +846,7 @@ libxcb1
 libxcb-composite0
 libxcb-dri2-0
 libxcb-dri3-0
+libxcb-ewmh2
 libxcb-glx0
 libxcb-icccm4
 libxcb-present0
