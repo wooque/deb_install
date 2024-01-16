@@ -220,6 +220,7 @@ libamd2
 libann0
 libao4
 libao-common
+libaom0
 libaom3
 libapparmor1
 libapt-pkg6.0
@@ -244,11 +245,14 @@ libavahi-common3
 libavahi-common-data
 libavahi-glib1
 libavc1394-0
+libavcodec58
 libavcodec59
 libavdevice59
 libavfilter8
+libavformat58
 libavformat59
 libavif15
+libavutil56
 libavutil57
 libayatana-appindicator3-1
 libayatana-ido3-0.4-0
@@ -309,6 +313,7 @@ libc-l10n
 libcloudproviders0
 libclucene-contribs1v5
 libclucene-core1v5
+libcodec2-0.9
 libcodec2-1.0
 libcolamd2
 libcolord2
@@ -322,6 +327,7 @@ libcurl4
 libdaemon0
 libdate-tz3
 libdatrie1
+libdav1d4
 libdav1d6
 libdaxctl1
 libdb5.3
@@ -739,6 +745,7 @@ libsphinxbase3
 libspice-server1
 libsqlite3-0
 libsratom-0-0
+libsrt1.4-gnutls
 libsrt1.5-gnutls
 libss2
 libssh2-1
@@ -749,7 +756,9 @@ libstartup-notification0
 libstdc++6
 libsuitesparseconfig5
 libsvtav1enc1
+libswresample3
 libswresample4
+libswscale5
 libswscale6
 libsynctex2
 libsystemd0
@@ -812,6 +821,7 @@ libvisual-0.4-0
 libvorbis0a
 libvorbisenc2
 libvorbisfile3
+libvpx6
 libvpx7
 libvte-2.91-0
 libvte-2.91-common
@@ -824,6 +834,7 @@ libwayland-cursor0
 libwayland-egl1
 libwayland-server0
 libwbclient0
+libwebp6
 libwebp7
 libwebpdemux2
 libwebpmux3
@@ -838,7 +849,9 @@ libwps-0.4-4
 libx11-6
 libx11-data
 libx11-xcb1
+libx264-160
 libx264-164
+libx265-192
 libx265-199
 libxau6
 libxaw7
@@ -1073,6 +1086,7 @@ signal-desktop
 slurp
 sound-theme-freedesktop
 sphinx-rtd-theme-common
+strace
 sudo
 sway
 swaybg

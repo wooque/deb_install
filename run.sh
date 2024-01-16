@@ -17,7 +17,7 @@ webp-pixbuf-loader xarchiver zip p7zip-full zathura libreoffice-gtk3 libreoffice
 libreoffice-calc libreoffice-impress transmission-gtk exfalso python3-musicbrainzngs otpclient"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick librsvg2-bin qpdf lm-sensors ncdu
 neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync
-samba tlp yt-dlp unattended-upgrades upower rclone syncthing ripgrep adb fastboot"
+samba tlp yt-dlp unattended-upgrades upower rclone syncthing ripgrep strace adb fastboot"
 INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools"
 INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm beekeeper-studio
 nicotine google-chrome-stable firefox dropbox"
@@ -48,6 +48,11 @@ brave-browser () {
 }
 
 viber () {
+  # install Bullseye libraries
+  echo "deb http://deb.debian.org/debian/ bullseye main" | sudo tee -a /etc/apt/sources.list
+  sudo apt update
+  ai libavformat58 libswscale5
+
   ai libgstreamer-plugins-bad1.0-0 libopengl0
   wget "https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb" -O /tmp/viber.deb
   ai /tmp/viber.deb

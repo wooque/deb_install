@@ -109,6 +109,7 @@ libargon2-1
 libattr1
 libaudit1
 libaudit-common
+libavformat58
 libblkid1
 libbpf1
 libbsd0
@@ -189,6 +190,7 @@ libsmartcols1
 libss2
 libssl3
 libstdc++6
+libswscale5
 libsystemd0
 libsystemd-shared
 libtasn1-6
@@ -202,6 +204,8 @@ libudev1
 libunistring2
 libuuid1
 libwayland-client0
+libwayland-cursor0
+libwayland-egl1
 libwayland-server0
 libwlroots12
 libxtables12
@@ -275,6 +279,7 @@ sensible-utils
 shim-signed
 signal-desktop
 slurp
+strace
 sudo
 sway
 swayidle
