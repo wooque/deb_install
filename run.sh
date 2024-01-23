@@ -121,12 +121,10 @@ google-chrome-stable () {
 }
 
 firefox () {
-  wget "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US" -O /tmp/firefox.tar.bz2
-  tar xvf /tmp/firefox.tar.bz2
-  sudo mv ./firefox /opt
-  sudo ln -s /opt/firefox/firefox /usr/local/bin/firefox
-  sudo wget https://raw.githubusercontent.com/mozilla/sumo-kb/main/install-firefox-linux/firefox.desktop -P /usr/local/share/applications
-  sudo sed -i "s/=firefox/=\/opt\/firefox\/firefox-bin/" /usr/local/share/applications/firefox.desktop
+  local key=/etc/apt/keyrings/packages.mozilla.org.asc
+  wget https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee $key
+  echo "deb [signed-by=$key] https://packages.mozilla.org/apt mozilla main" | sudo tee /etc/apt/sources.list.d/mozilla.list
+  sudo apt update && ai firefox
 }
 
 main () {

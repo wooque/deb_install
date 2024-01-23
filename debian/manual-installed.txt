@@ -54,6 +54,7 @@ fdisk
 ffmpeg
 file
 findutils
+firefox
 firmware-amd-graphics
 firmware-iwlwifi
 firmware-realtek
