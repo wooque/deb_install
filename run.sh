@@ -25,7 +25,7 @@ INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
 xdg-desktop-portal-wlr grim slurp jq brightnessctl brightness-udev gammastep
 thunar thunar-archive-plugin tumbler pavucontrol cmus cmus-plugin-ffmpeg ncal python3-i3ipc"
 INSTALL_SWAY_DESKTOP="pipewire-audio rtkit network-manager xwayland gvfs gvfs-backends eject dconf-cli
-gnome-keyring gnome-icon-theme playerctl libdbus-glib-1-2"
+gnome-keyring gnome-icon-theme playerctl"
 INSTALL_BACKPORTS="yt-dlp"
 INSTALL_PACKAGES="$INSTALL_FONTS $INSTALL_GUI $INSTALL_UTILS
 $INSTALL_DEV $INSTALL_SWAY_BASE $INSTALL_SWAY_DESKTOP"
