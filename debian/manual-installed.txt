@@ -9,7 +9,6 @@ base-files
 base-passwd
 bash
 bash-completion
-beekeeper-studio
 bind9-dnsutils
 bind9-host
 brave-browser
@@ -124,10 +123,8 @@ libcom-err2
 libcrypt1
 libcryptsetup12
 libdb5.3
-libdbus-glib-1-2
 libdebconfclient0
 libdevmapper1.02.1
-libdisplay-info1
 libedit2
 libelf1
 libext2fs2

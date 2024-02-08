@@ -19,7 +19,7 @@ INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick librsvg2-bin qpd
 neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync
 samba tlp yt-dlp unattended-upgrades upower rclone syncthing ripgrep strace adb fastboot"
 INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools"
-INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm beekeeper-studio
+INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm
 nicotine google-chrome-stable firefox dropbox"
 INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
 xdg-desktop-portal-wlr grim slurp jq brightnessctl brightness-udev gammastep
