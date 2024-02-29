@@ -16,6 +16,7 @@ brave-browser
 brightnessctl
 brightness-udev
 bsdutils
+build-essential
 busybox
 bzip2
 ca-certificates

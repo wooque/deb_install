@@ -18,7 +18,7 @@ libreoffice-calc libreoffice-impress transmission-gtk exfalso python3-musicbrain
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick librsvg2-bin qpdf lm-sensors ncdu
 neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync
 samba tlp yt-dlp unattended-upgrades upower rclone syncthing ripgrep strace adb fastboot"
-INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools make python-venv"
+INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools make python-venv build-essential"
 INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm
 nicotine google-chrome-stable firefox dropbox beekeeper-studio"
 INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
