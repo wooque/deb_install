@@ -298,6 +298,7 @@ tasksel
 tasksel-data
 thunar
 thunar-archive-plugin
+thunderbird
 tlp
 traceroute
 transmission-gtk

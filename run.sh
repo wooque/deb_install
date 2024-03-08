@@ -14,7 +14,7 @@ INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-
 fonts-dejavu-core"
 INSTALL_GUI="gimp gtk2-engines-pixbuf meld mpv mesa-va-drivers mate-calc mousepad ristretto
 webp-pixbuf-loader xarchiver zip p7zip-full zathura libreoffice-gtk3 libreoffice-writer
-libreoffice-calc libreoffice-impress transmission-gtk exfalso python3-musicbrainzngs otpclient"
+libreoffice-calc libreoffice-impress transmission-gtk exfalso python3-musicbrainzngs otpclient thunderbird"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick librsvg2-bin qpdf lm-sensors ncdu
 neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync
 samba tlp yt-dlp unattended-upgrades upower rclone syncthing ripgrep strace adb fastboot"
