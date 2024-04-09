@@ -19,6 +19,7 @@ apt-transport-https
 apt-utils
 at-spi2-common
 avahi-autoipd
+awscli
 base-files
 base-passwd
 bash
@@ -89,6 +90,7 @@ dmsetup
 doc-debian
 docker-compose
 docker.io
+docutils-common
 dosfstools
 dpkg
 dpkg-dev
@@ -875,7 +877,7 @@ libwebpdemux2
 libwebpmux3
 libwebrtc-audio-processing1
 libwireplumber-0.4-0
-libwlroots12
+libwlroots12t64
 libwmf-0.2-7
 libwmflite-0.2-7
 libwpd-0.10-10
@@ -962,7 +964,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
-linux-image-6.1.0-18-amd64
+linux-image-6.1.0-21-amd64
 linux-image-amd64
 linux-libc-dev
 lm-sensors
@@ -1041,11 +1043,16 @@ python3.11-minimal
 python3.11-venv
 python3-apt
 python3-attr
+python3-awscrt
 python3-brotli
 python3-cairo
 python3-certifi
+python3-cffi-backend
 python3-chardet
 python3-charset-normalizer
+python3-colorama
+python3-cryptography
+python3-dateutil
 python3-dbus
 python3-debconf
 python3-debian
@@ -1057,6 +1064,7 @@ python3-dnspython
 python3-docker
 python3-dockerpty
 python3-docopt
+python3-docutils
 python3-dotenv
 python3-feedparser
 python3-gi
@@ -1064,6 +1072,7 @@ python3-gi-cairo
 python3-httplib2
 python3-i3ipc
 python3-idna
+python3-jmespath
 python3-jsonschema
 python3-ldb
 python3-lib2to3
@@ -1072,6 +1081,8 @@ python3-musicbrainzngs
 python3-mutagen
 python3-pip-whl
 python3-pkg-resources
+python3-prompt-toolkit
+python3-pyasn1
 python3-pycryptodome
 python3-pycurl
 python3-pyparsing
@@ -1079,6 +1090,9 @@ python3-pyrsistent
 python3-pysimplesoap
 python3-reportbug
 python3-requests
+python3-roman
+python3-ruamel.yaml
+python3-ruamel.yaml.clib
 python3-samba
 python3-setuptools-whl
 python3-sgmllib3k
@@ -1088,6 +1102,7 @@ python3-tdb
 python3-texttable
 python3-urllib3
 python3-venv
+python3-wcwidth
 python3-websocket
 python3-websockets
 python3-xlib
