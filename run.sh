@@ -48,12 +48,7 @@ brave-browser () {
 }
 
 viber () {
-  # install Bullseye libraries
-  echo "deb http://deb.debian.org/debian/ bullseye main" | sudo tee -a /etc/apt/sources.list
-  sudo apt update
-  ai libavformat58 libswscale5
-
-  ai libgstreamer-plugins-bad1.0-0 libopengl0
+  ai libopengl0
   wget "https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb" -O /tmp/viber.deb
   ai /tmp/viber.deb
 }
@@ -64,7 +59,7 @@ code () {
 }
 
 asdf-vm () {
-  local version="0.13.1"
+  local version="0.14.0"
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v${version}
   . "$HOME/.asdf/asdf.sh"
   asdf plugin-add nodejs
@@ -72,7 +67,7 @@ asdf-vm () {
 }
 
 dropbox () {
-  local version="2023.09.06"
+  local version="2024.04.17"
   wget --header "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" \
     "https://www.dropbox.com/download?dl=packages/debian/dropbox_${version}_amd64.deb" -O /tmp/dropbox.deb
   ai /tmp/dropbox.deb
