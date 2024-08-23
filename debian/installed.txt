@@ -361,7 +361,7 @@ libdeflate0
 libdevmapper1.02.1
 libdiscid0
 libdiscover2
-libdisplay-info1
+libdisplay-info2
 libdpkg-perl
 libdrm2
 libdrm-amdgpu1
@@ -806,7 +806,6 @@ libtk8.6
 libtsan2
 libtumbler-1-0
 libtwolame0
-libu2f-udev
 libubsan1
 libuchardet0
 libudev1
@@ -943,7 +942,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
-linux-image-6.1.0-23-amd64
+linux-image-6.1.0-26-amd64
 linux-image-amd64
 linux-libc-dev
 lm-sensors
