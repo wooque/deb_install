@@ -31,8 +31,10 @@ bind9-libs
 binutils
 binutils-common
 binutils-x86-64-linux-gnu
+blueman
 bluetooth
 bluez
+bluez-obexd
 brave-browser
 brave-keyring
 brightnessctl
@@ -145,6 +147,7 @@ gir1.2-gtk-3.0
 gir1.2-gtk-4.0
 gir1.2-gtksource-4
 gir1.2-harfbuzz-0.0
+gir1.2-nm-1.0
 gir1.2-pango-1.0
 gir1.2-soup-2.4
 git
@@ -497,6 +500,7 @@ libhunspell-1.7-0
 libhwy1
 libhyphen0
 libibverbs1
+libical3
 libice6
 libicu72
 libidn12
@@ -613,6 +617,8 @@ libnl-3-200
 libnl-genl-3-200
 libnl-route-3-200
 libnm0
+libnma0
+libnma-common
 libnorm1
 libnotify4
 libnpth0
@@ -980,6 +986,7 @@ neofetch
 netbase
 netcat-traditional
 network-manager
+network-manager-gnome
 nftables
 nicotine
 nodejs
@@ -1009,6 +1016,7 @@ pipewire-audio
 pipewire-bin
 pipewire-pulse
 playerctl
+policykit-1-gnome
 polkitd
 poppler-data
 powertop
