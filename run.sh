@@ -20,7 +20,7 @@ neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rs
 samba tlp yt-dlp unattended-upgrades upower rclone syncthing ripgrep strace adb fastboot"
 INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools make python-venv build-essential awscli"
 INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm
-nicotine google-chrome-stable firefox dropbox beekeeper-studio"
+nicotine google-chrome-stable firefox dropbox beekeeper-studio slack-desktop"
 INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
 xdg-desktop-portal-wlr grim slurp jq brightnessctl brightness-udev gammastep
 thunar thunar-archive-plugin tumbler pavucontrol cmus cmus-plugin-ffmpeg ncal python3-i3ipc"
@@ -91,6 +91,13 @@ signal-desktop () {
   echo "deb [arch=amd64 signed-by=$key] https://updates.signal.org/desktop/apt xenial main" \
     | sudo tee /etc/apt/sources.list.d/signal-xenial.list
   sudo apt update && ai signal-desktop
+}
+
+slack-desktop () {
+  local version=4.41.97
+  ai libglib2.0-bin
+  wget -O- https://downloads.slack-edge.com/desktop-releases/linux/x64/$version/slack-desktop-$version-amd64.deb -O /tmp/slack.deb
+  ai /tmp/slack.deb
 }
 
 beekeeper-studio () {

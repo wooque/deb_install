@@ -135,6 +135,7 @@ libfdisk1
 libffi8
 libgcc-s1
 libgcrypt20
+libglib2.0-bin
 libgmp10
 libgnutls30
 libgpg-error0
@@ -280,6 +281,7 @@ sed
 sensible-utils
 shim-signed
 signal-desktop
+slack-desktop
 slurp
 strace
 sudo
