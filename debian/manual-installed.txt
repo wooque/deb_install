@@ -142,6 +142,8 @@ libgpg-error0
 libgssapi-krb5-2
 libhogweed6
 libidn2-0
+libinput10
+libinput-bin
 libip4tc2
 libjansson4
 libjson-c5
@@ -203,11 +205,15 @@ libtirpc-common
 libudev1
 libunistring2
 libuuid1
+libva2
+libva-drm2
+libva-wayland2
+libva-x11-2
 libwayland-client0
 libwayland-cursor0
 libwayland-egl1
 libwayland-server0
-libwlroots12t64
+libwlroots-0.18
 libxtables12
 libxxhash0
 libzstd1

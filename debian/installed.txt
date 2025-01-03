@@ -865,7 +865,7 @@ libwebpdemux2
 libwebpmux3
 libwebrtc-audio-processing1
 libwireplumber-0.4-0
-libwlroots12t64
+libwlroots-0.18
 libwmf-0.2-7
 libwmflite-0.2-7
 libwpd-0.10-10
@@ -882,6 +882,7 @@ libxcb1
 libxcb-composite0
 libxcb-dri2-0
 libxcb-dri3-0
+libxcb-errors0
 libxcb-ewmh2
 libxcb-glx0
 libxcb-icccm4
