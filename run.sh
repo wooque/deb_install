@@ -74,7 +74,7 @@ dropbox () {
 }
 
 nodejs () {
-  local version=20
+  local version=22
   local key=/etc/apt/keyrings/nodesource.gpg
   wget -O- https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpgd $key
   echo "deb [signed-by=$key] https://deb.nodesource.com/node_$version.x nodistro main" \
@@ -94,7 +94,7 @@ signal-desktop () {
 }
 
 slack-desktop () {
-  local version=4.41.97
+  local version=4.41.105
   ai libglib2.0-bin
   wget -O- https://downloads.slack-edge.com/desktop-releases/linux/x64/$version/slack-desktop-$version-amd64.deb -O /tmp/slack.deb
   ai /tmp/slack.deb

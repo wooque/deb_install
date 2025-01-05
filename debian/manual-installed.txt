@@ -209,10 +209,6 @@ libva2
 libva-drm2
 libva-wayland2
 libva-x11-2
-libwayland-client0
-libwayland-cursor0
-libwayland-egl1
-libwayland-server0
 libwlroots-0.18
 libxtables12
 libxxhash0
