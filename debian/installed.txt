@@ -626,7 +626,6 @@ libnsl2
 libnsl-dev
 libnspr4
 libnss3
-libnss3-tools
 libnss-systemd
 libnuma1
 libnumbertext-1.0-0
@@ -949,7 +948,7 @@ libzvbi0
 libzvbi-common
 libzxing2
 linux-base
-linux-image-6.1.0-28-amd64
+linux-image-6.1.0-31-amd64
 linux-image-amd64
 linux-libc-dev
 lm-sensors
@@ -972,7 +971,6 @@ media-types
 meld
 mesa-va-drivers
 mime-support
-mkcert
 mokutil
 mount
 mousepad
@@ -1064,7 +1062,6 @@ python3-jsonschema
 python3-ldb
 python3-lib2to3
 python3-minimal
-python3-musicbrainzngs
 python3-mutagen
 python3-pip-whl
 python3-pkg-resources

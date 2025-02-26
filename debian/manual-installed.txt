@@ -165,7 +165,6 @@ libnettle8
 libnewt0.52
 libnftables1
 libnftnl11
-libnss3-tools
 libnss-systemd
 libopengl0
 libp11-kit0
@@ -230,7 +229,6 @@ media-types
 meld
 mesa-va-drivers
 mime-support
-mkcert
 mount
 mousepad
 mpv
@@ -262,7 +260,6 @@ playerctl
 powertop
 procps
 python3-i3ipc
-python3-musicbrainzngs
 python3-reportbug
 python3-venv
 qemu-system-gui

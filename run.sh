@@ -14,12 +14,12 @@ INSTALL_FONTS="fonts-noto-cjk fonts-noto-core fonts-liberation fonts-noto-color-
 fonts-dejavu-core"
 INSTALL_GUI="gimp gtk2-engines-pixbuf meld mpv mesa-va-drivers mate-calc mousepad ristretto
 webp-pixbuf-loader xarchiver zip p7zip-full zathura libreoffice-gtk3 libreoffice-writer
-libreoffice-calc libreoffice-impress transmission-gtk exfalso python3-musicbrainzngs otpclient thunderbird"
+libreoffice-calc libreoffice-impress transmission-gtk exfalso otpclient thunderbird"
 INSTALL_UTILS="apt-transport-https curl ffmpeg htop imagemagick librsvg2-bin qpdf lm-sensors ncdu
 neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rsync
 samba tlp yt-dlp unattended-upgrades upower rclone syncthing ripgrep strace adb fastboot"
-INSTALL_DEV="docker.io docker-compose git gitk mkcert libnss3-tools make python-venv build-essential awscli"
-INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs asdf-vm
+INSTALL_DEV="docker.io docker-compose git gitk make python-venv build-essential awscli"
+INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs
 nicotine google-chrome-stable firefox dropbox beekeeper-studio slack-desktop"
 INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
 xdg-desktop-portal-wlr grim slurp jq brightnessctl brightness-udev gammastep
@@ -56,14 +56,6 @@ viber () {
 code () {
   wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O /tmp/code.deb
   ai /tmp/code.deb
-}
-
-asdf-vm () {
-  local version="0.14.0"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v${version}
-  . "$HOME/.asdf/asdf.sh"
-  asdf plugin-add nodejs
-  asdf plugin-add python
 }
 
 dropbox () {
@@ -232,10 +224,5 @@ EOF
     echo_sleep "Install $app..."
     $app
   done
-
-  echo_sleep "asdf install..."
-  . "$HOME/.asdf/asdf.sh"
-  asdf nodejs update nodebuild
-  asdf install
 }
 main "$@"
