@@ -46,6 +46,7 @@ build-essential
 busybox
 bzip2
 ca-certificates
+clipman
 cmus
 cmus-plugin-ffmpeg
 code
@@ -1184,6 +1185,7 @@ whiptail
 wireless-regdb
 wireless-tools
 wireplumber
+wl-clipboard
 wofi
 wpasupplicant
 x11-common
