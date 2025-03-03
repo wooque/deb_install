@@ -46,7 +46,6 @@ build-essential
 busybox
 bzip2
 ca-certificates
-clipman
 cmus
 cmus-plugin-ffmpeg
 code

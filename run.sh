@@ -20,11 +20,11 @@ neofetch powertop qemu-system-x86 qemu-system-gui qemu-utils radeontop ranger rs
 samba tlp yt-dlp unattended-upgrades upower rclone syncthing ripgrep strace adb fastboot"
 INSTALL_DEV="docker.io docker-compose git gitk make python-venv build-essential awscli"
 INSTALL_EXTRA="brave-browser viber code signal-desktop nodejs
-nicotine google-chrome-stable firefox dropbox beekeeper-studio slack-desktop"
+nicotine google-chrome-stable firefox dropbox beekeeper-studio slack-desktop cliphist"
 INSTALL_SWAY_BASE="sway foot waybar swayidle swaylock wofi mako-notifier kanshi
 xdg-desktop-portal-wlr grim slurp jq brightnessctl brightness-udev gammastep
 thunar thunar-archive-plugin tumbler pavucontrol cmus cmus-plugin-ffmpeg ncal python3-i3ipc
-wl-clipboard clipman"
+wl-clipboard"
 INSTALL_SWAY_DESKTOP="pipewire-audio rtkit network-manager network-manager-applet blueman xwayland gvfs gvfs-backends eject dconf-cli
 gnome-keyring gnome-icon-theme playerctl"
 INSTALL_BACKPORTS="yt-dlp"
@@ -120,6 +120,12 @@ firefox () {
   wget https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee $key
   echo "deb [signed-by=$key] https://packages.mozilla.org/apt mozilla main" | sudo tee /etc/apt/sources.list.d/mozilla.list
   sudo apt update && ai firefox
+}
+
+cliphist () {
+  local version=0.6.1
+  wget "https://github.com/sentriz/cliphist/releases/download/v${version}/v${version}-linux-amd64" -O ~/.local/bin/cliphist
+  chmod +x ~/.local/bin/cliphist
 }
 
 main () {
