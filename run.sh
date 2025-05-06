@@ -87,7 +87,7 @@ signal-desktop () {
 }
 
 slack-desktop () {
-  local version=4.41.105
+  local version=4.43.52
   ai libglib2.0-bin
   wget -O- https://downloads.slack-edge.com/desktop-releases/linux/x64/$version/slack-desktop-$version-amd64.deb -O /tmp/slack.deb
   ai /tmp/slack.deb
@@ -105,7 +105,7 @@ nicotine () {
   local key=/etc/apt/keyrings/nicotine-team-ubuntu-stable.gpg
   wget -O- "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x6E60F93DCD3E27CBE2F0CCA16CEB6050A30E5769" \
     | gpgd $key
-  echo "deb [signed-by=$key] https://ppa.launchpadcontent.net/nicotine-team/stable/ubuntu jammy main" \
+  echo "deb [signed-by=$key] https://ppa.launchpadcontent.net/nicotine-team/stable/ubuntu noble main" \
     | sudo tee /etc/apt/sources.list.d/nicotine-team-ubuntu-stable.list
   sudo apt update && ai nicotine
 }
