@@ -209,6 +209,7 @@ imagemagick-7.q16
 inetutils-telnet
 init
 initramfs-tools
+initramfs-tools-bin
 initramfs-tools-core
 init-system-helpers
 installation-report
@@ -985,7 +986,7 @@ libzvbi-common
 libzxcvbn0
 libzxing3
 linux-base
-linux-image-6.12.27-amd64
+linux-image-6.12.30-amd64
 linux-image-amd64
 linux-libc-dev
 linux-sysctl-defaults

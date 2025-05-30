@@ -8,7 +8,6 @@ ai () { sudo apt install --no-install-recommends --purge "$@"; }
 gpgd () { sudo gpg --dearmour -o "$@"; }
 
 DISTRO=$(sed -n 's/^ID=//p' /etc/os-release)
-CODENAME=$(sed -n 's/^VERSION_CODENAME=//p' /etc/os-release)
 
 PACKAGES="
 # system
@@ -344,6 +343,26 @@ EOF
 [ "$1" = "pre" ] && echo "disconnecting bt..." && bluetoothctl disconnect
 EOF
   sudo chmod +x /usr/lib/systemd/system-sleep/mysleep
+
+  echo_sleep "Fix bluetooth autoconnect..."
+  sudo mkdir -p /etc/wireplumber/wireplumber.conf.d
+  sudo tee /etc/wireplumber/wireplumber.conf.d/99-my-config.conf <<EOF
+monitor.bluez.rules = [
+  {
+    matches = [
+      {
+        ## This matches all bluetooth devices.
+        device.name = "~bluez_card.*"
+      }
+    ]
+    actions = {
+      update-props = {
+        bluez5.auto-connect = [ hfp_hf hsp_hs a2dp_sink hfp_ag hsp_ag a2dp_source ]
+      }
+    }
+  }
+]
+EOF
 
   echo_sleep "Setup fonts..."
   sudo cp ./fonts.conf /etc/fonts/local.conf
