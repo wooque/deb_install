@@ -145,7 +145,7 @@ wl-clip-persist () {
 firefox () {
   local key=/usr/share/keyrings/packages.mozilla.org.gpg
   wget -qO - https://packages.mozilla.org/apt/repo-signing-key.gpg | gpgd $key
-  cat <<EOF | sudo tee /etc/apt/sources.list.d/mozilla.sources
+  sudo tee /etc/apt/sources.list.d/mozilla.sources <<EOF
 Types: deb
 URIs: https://packages.mozilla.org/apt/
 Suites: mozilla
@@ -158,7 +158,7 @@ EOF
 brave-browser () {
   local key=/usr/share/keyrings/brave-browser-archive-keyring.gpg
   wget -qO- https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg | sudo tee $key >/dev/null
-  cat <<EOF | sudo tee /etc/apt/sources.list.d/brave-browser-release.sources
+  sudo tee /etc/apt/sources.list.d/brave-browser-release.sources <<EOF
 Types: deb
 URIs: https://brave-browser-apt-release.s3.brave.com/
 Suites: stable
@@ -171,7 +171,7 @@ EOF
 google-chrome-stable () {
   local key=/usr/share/keyrings/google-chrome.gpg
   wget -qO- https://dl.google.com/linux/linux_signing_key.pub | gpgd $key
-  cat <<EOF | sudo tee /etc/apt/sources.list.d/google-chrome.sources
+  sudo tee /etc/apt/sources.list.d/google-chrome.sources <<EOF
 Types: deb
 URIs: https://dl.google.com/linux/chrome/deb/
 Suites: stable
@@ -190,7 +190,7 @@ viber () {
 code () {
   local key=/usr/share/keyrings/microsoft.gpg
   wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpgd $key
-  cat <<EOF | sudo tee /etc/apt/sources.list.d/vscode.sources
+  sudo tee /etc/apt/sources.list.d/vscode.sources <<EOF
 Types: deb
 URIs: https://packages.microsoft.com/repos/code/
 Suites: stable
@@ -212,7 +212,7 @@ cursor () {
 beekeeper-studio () {
   local key=/usr/share/keyrings/beekeeper-studio.gpg
   wget -qO- https://deb.beekeeperstudio.io/beekeeper.key | gpgd $key
-  cat <<EOF | sudo tee /etc/apt/sources.list.d/beekeeper-studio-app.sources
+  sudo tee /etc/apt/sources.list.d/beekeeper-studio-app.sources <<EOF
 Types: deb
 URIs: https://deb.beekeeperstudio.io/
 Suites: stable
@@ -225,7 +225,7 @@ EOF
 nodejs () {
   local key=/usr/share/keyrings/nodesource.gpg
   wget -qO- https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpgd $key
-  cat <<EOF | sudo tee /etc/apt/sources.list.d/nodesource.sources
+  sudo tee /etc/apt/sources.list.d/nodesource.sources <<EOF
 Types: deb
 URIs: https://deb.nodesource.com/node_22.x/
 Suites: nodistro
@@ -248,7 +248,7 @@ asdf-vm () {
 dropbox () {
   local key=/usr/share/keyrings/dropbox.gpg
   wget -qO- https://linux.dropboxstatic.com/fedora/rpm-public-key.asc | gpgd $key
-  cat <<EOF | sudo tee /etc/apt/sources.list.d/dropbox.sources
+  sudo tee /etc/apt/sources.list.d/dropbox.sources <<EOF
 Types: deb
 URIs: http://linux.dropbox.com/debian/
 Suites: trixie
@@ -261,7 +261,7 @@ EOF
 signal-desktop () {
   local key=/usr/share/keyrings/signal-desktop-keyring.gpg
   wget -qO- https://updates.signal.org/desktop/apt/keys.asc | gpgd $key
-  cat <<EOF | sudo tee /etc/apt/sources.list.d/signal-xenial.sources
+  sudo tee /etc/apt/sources.list.d/signal-xenial.sources <<EOF
 Types: deb
 URIs: https://updates.signal.org/desktop/apt/
 Suites: xenial
@@ -274,7 +274,7 @@ EOF
 slack-desktop () {
   local key=/usr/share/keyrings/slack.gpg
   ai libglib2.0-bin
-  cat <<EOF | sudo tee /etc/apt/sources.list.d/slack.sources
+  sudo tee /etc/apt/sources.list.d/slack.sources <<EOF
 Types: deb
 URIs: https://packagecloud.io/slacktechnologies/slack/debian/
 Suites: jessie
@@ -296,7 +296,7 @@ DOTFILES_GITHUB="wooque/dotfiles"
 
 main () {
   echo_sleep "Setup apt..."
-  cat <<EOF | sudo tee /etc/apt/apt.conf.d/99norecommends
+  sudo tee /etc/apt/apt.conf.d/99norecommends <<EOF
 APT::Install-Recommends "false";
 EOF
   sudo sed -i '/^deb-src /d' /etc/apt/sources.list
@@ -338,6 +338,13 @@ EOF
   echo_sleep "Setup TLP..."
   sudo cp ./tlp.conf /etc/tlp.d/custom.conf
 
+  echo_sleep "Fix bluetooth sleep..."
+  sudo tee /usr/lib/systemd/system-sleep/mysleep <<'EOF'
+#!/bin/sh
+[ "$1" = "pre" ] && echo "disconnecting bt..." && bluetoothctl disconnect
+EOF
+  sudo chmod +x /usr/lib/systemd/system-sleep/mysleep
+
   echo_sleep "Setup fonts..."
   sudo cp ./fonts.conf /etc/fonts/local.conf
 
@@ -372,7 +379,7 @@ EOF
 
   echo_sleep "key signing workaround..."
   sudo mkdir -p /etc/crypto-policies/back-ends
-  cat <<EOF | sudo tee /etc/crypto-policies/back-ends/apt-sequoia.config
+  sudo tee /etc/crypto-policies/back-ends/apt-sequoia.config <<EOF
 [hash_algorithms]
 sha1.collision_resistance = "always"
 sha1.second_preimage_resistance = "always"
