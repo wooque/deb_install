@@ -286,7 +286,7 @@ EOF
 }
 
 DISABLE_SERVICES="docker containerd nmbd smbd"
-DISABLE_USER_SERVICES="gvfs-afc-volume-monitor gvfs-goa-volume-monitor gvfs-gphoto2-volume-monitor mpris-proxy"
+DISABLE_USER_SERVICES="gvfs-afc-volume-monitor gvfs-goa-volume-monitor gvfs-gphoto2-volume-monitor mpris-proxy filter-chain"
 
 USER_GROUPS="docker"
 FSTAB="LABEL=PODACI /mnt/PODACI ext4 rw,noatime,x-gvfs-show 0 1"
