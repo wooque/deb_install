@@ -333,6 +333,7 @@ EOF
   echo_sleep "Setup systemd tweaks..."
   sudo sed -i 's/#SystemMaxUse=/SystemMaxUse=10M/' /etc/systemd/journald.conf
   sudo sed -i 's/#RuntimeMaxUse=/RuntimeMaxUse=10M/' /etc/systemd/journald.conf
+  sudo sed -i 's/#KillUserProcesses=.*/KillUserProcesses=yes/' /etc/systemd/logind.conf
 
   echo_sleep "Setup TLP..."
   sudo cp ./tlp.conf /etc/tlp.d/custom.conf
