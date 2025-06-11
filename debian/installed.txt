@@ -719,6 +719,7 @@ libpulse-mainloop-glib0
 libpython3.13-minimal
 libpython3.13-stdlib
 libpython3-stdlib
+libqpdf30
 libquadmath0
 libqxp-0.0-0
 librabbitmq4
@@ -1114,6 +1115,7 @@ qemu-system-gui
 qemu-system-modules-opengl
 qemu-system-x86
 qemu-utils
+qpdf
 radeontop
 ranger
 rclone

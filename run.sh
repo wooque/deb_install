@@ -67,6 +67,7 @@ libreoffice-gtk3
 libreoffice-writer
 libreoffice-calc
 libreoffice-impress
+qpdf
 gimp
 mpv
 mesa-va-drivers
