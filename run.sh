@@ -179,6 +179,7 @@ Components: main
 Signed-By: $key
 EOF
   sudo apt update && ai google-chrome-stable
+  sudo rm -f /etc/apt/sources.list.d/google-chrome.list
 }
 
 viber () {
@@ -256,6 +257,7 @@ Components: main
 Signed-By: $key
 EOF
   sudo apt update && ai dropbox
+  sudo rm -f /etc/apt/sources.list.d/dropbox.list
 }
 
 signal-desktop () {
@@ -281,9 +283,10 @@ Suites: jessie
 Components: main
 Signed-By: /etc/apt/trusted.gpg.d/slack-desktop.gpg
 EOF
-  sudo apt update && ai slack-desktop
+  sudo apt --allow-insecure-repositories update && ai slack-desktop
   # to insert key
   sudo /etc/cron.daily/slack
+  sudo rm /etc/apt/sources.list.d/slack.list
 }
 
 DISABLE_SERVICES="docker containerd nmbd smbd"
