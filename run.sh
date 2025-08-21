@@ -127,7 +127,8 @@ nodejs
 asdf-vm
 dropbox
 signal-desktop
-slack-desktop"
+slack-desktop
+stremio-service"
 INSTALL_EXTRA=$(echo "$EXTRA_PACKAGES" | grep -vE '^#|^\s*$')
 INSTALL_PYTHON_BUILD_DEPS="libbz2-dev libffi-dev liblzma-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev tk-dev uuid-dev zlib1g-dev"
 
@@ -287,6 +288,11 @@ EOF
   # to insert key
   sudo /etc/cron.daily/slack
   sudo rm /etc/apt/sources.list.d/slack.list
+}
+
+stremio-service () {
+  wget https://dl.strem.io/stremio-service/v0.1.13/stremio-service_amd64.deb -O /tmp/stremio-service.deb
+  ai /tmp/stremio-service.deb
 }
 
 DISABLE_SERVICES="docker containerd nmbd smbd"

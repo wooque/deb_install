@@ -264,6 +264,7 @@ slack-desktop
 slurp
 sqv
 strace
+stremio-service
 sudo
 sway
 swayidle
