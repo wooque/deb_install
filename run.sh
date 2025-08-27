@@ -130,7 +130,21 @@ signal-desktop
 slack-desktop
 stremio-service"
 INSTALL_EXTRA=$(echo "$EXTRA_PACKAGES" | grep -vE '^#|^\s*$')
+
+INSTALL_BACKPORTS="yt-dlp"
 INSTALL_PYTHON_BUILD_DEPS="libbz2-dev libffi-dev liblzma-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev tk-dev uuid-dev zlib1g-dev"
+
+setup-backports () {
+  sudo tee -a /etc/apt/sources.list.d/debian.sources <<EOF
+
+Types: deb
+URIs: http://deb.debian.org/debian/
+Suites: trixie-backports
+Components: main non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+EOF
+  sudo apt update
+}
 
 wl-clip-persist () {
   cd /tmp
@@ -314,6 +328,10 @@ EOF
   echo_sleep "Install packages..."
   ai $INSTALL_PACKAGES
   sudo dpkg-reconfigure unattended-upgrades
+
+  echo_sleep "Install backports..."
+  setup-backports
+  ai -t trixie-backports $INSTALL_BACKPORTS
 
   echo_sleep "Fix network..."
   if [ -f /etc/network/interfaces ]; then
