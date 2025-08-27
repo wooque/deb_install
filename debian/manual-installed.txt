@@ -131,7 +131,6 @@ libext2fs2t64
 libfdisk1
 libfuse2t64
 libgcc-s1
-libglib2.0-bin
 libgmp10
 libgssapi-krb5-2
 libhogweed6t64
@@ -259,8 +258,6 @@ samba
 sed
 sensible-utils
 shim-signed
-signal-desktop
-slack-desktop
 slurp
 sqv
 strace

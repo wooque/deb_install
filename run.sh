@@ -126,8 +126,6 @@ beekeeper-studio
 nodejs
 asdf-vm
 dropbox
-signal-desktop
-slack-desktop
 stremio-service"
 INSTALL_EXTRA=$(echo "$EXTRA_PACKAGES" | grep -vE '^#|^\s*$')
 
@@ -273,35 +271,6 @@ Signed-By: $key
 EOF
   sudo apt update && ai dropbox
   sudo rm -f /etc/apt/sources.list.d/dropbox.list
-}
-
-signal-desktop () {
-  local key=/usr/share/keyrings/signal-desktop-keyring.gpg
-  wget -qO- https://updates.signal.org/desktop/apt/keys.asc | gpgd $key
-  sudo tee /etc/apt/sources.list.d/signal-xenial.sources <<EOF
-Types: deb
-URIs: https://updates.signal.org/desktop/apt/
-Suites: xenial
-Components: main
-Signed-By: $key
-EOF
-  sudo apt update && ai signal-desktop
-}
-
-slack-desktop () {
-  local key=/usr/share/keyrings/slack.gpg
-  ai libglib2.0-bin
-  sudo tee /etc/apt/sources.list.d/slack.sources <<EOF
-Types: deb
-URIs: https://packagecloud.io/slacktechnologies/slack/debian/
-Suites: jessie
-Components: main
-Signed-By: /etc/apt/trusted.gpg.d/slack-desktop.gpg
-EOF
-  sudo apt --allow-insecure-repositories update && ai slack-desktop
-  # to insert key
-  sudo /etc/cron.daily/slack
-  sudo rm /etc/apt/sources.list.d/slack.list
 }
 
 stremio-service () {
