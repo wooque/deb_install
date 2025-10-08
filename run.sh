@@ -111,7 +111,8 @@ meld
 build-essential
 python3-venv
 awscli
-tokei"
+tokei
+rustup"
 INSTALL_PACKAGES=$(echo "$PACKAGES" | grep -vE '^#|^\s*$')
 
 EXTRA_PACKAGES="

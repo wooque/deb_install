@@ -254,6 +254,7 @@ reportbug
 ripgrep
 ristretto
 rtkit
+rustup
 samba
 sed
 sensible-utils
