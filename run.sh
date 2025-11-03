@@ -126,8 +126,7 @@ cursor
 beekeeper-studio
 nodejs
 asdf-vm
-dropbox
-stremio-service"
+dropbox"
 INSTALL_EXTRA=$(echo "$EXTRA_PACKAGES" | grep -vE '^#|^\s*$')
 
 INSTALL_BACKPORTS="yt-dlp"

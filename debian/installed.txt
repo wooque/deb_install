@@ -1145,7 +1145,6 @@ sound-theme-freedesktop
 sphinx-rtd-theme-common
 sqv
 strace
-stremio-service
 sudo
 sway
 swaybg

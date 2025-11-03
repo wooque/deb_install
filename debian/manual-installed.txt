@@ -262,7 +262,6 @@ shim-signed
 slurp
 sqv
 strace
-stremio-service
 sudo
 sway
 swayidle
