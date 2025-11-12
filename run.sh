@@ -100,6 +100,7 @@ qemu-system-x86
 qemu-system-gui
 qemu-utils
 samba
+adb
 # dev
 docker.io
 docker-cli
@@ -271,11 +272,6 @@ Signed-By: $key
 EOF
   sudo apt update && ai dropbox
   sudo rm -f /etc/apt/sources.list.d/dropbox.list
-}
-
-stremio-service () {
-  wget https://dl.strem.io/stremio-service/v0.1.13/stremio-service_amd64.deb -O /tmp/stremio-service.deb
-  ai /tmp/stremio-service.deb
 }
 
 DISABLE_SERVICES="docker containerd nmbd smbd"

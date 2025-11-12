@@ -1,4 +1,5 @@
 7zip
+adb
 adduser
 adwaita-icon-theme
 adwaita-icon-theme-legacy
@@ -6,6 +7,12 @@ alsa-topology-conf
 alsa-ucm-conf
 amd64-microcode
 anacron
+android-libbase
+android-libboringssl
+android-libcutils
+android-liblog
+android-libziparchive
+android-udev-rules
 apparmor
 apt
 apt-listchanges
