@@ -193,7 +193,6 @@ gstreamer1.0-libav
 gstreamer1.0-plugins-base
 gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
-gstreamer1.0-pulseaudio
 gtk-update-icon-cache
 gvfs
 gvfs-backends
@@ -993,7 +992,7 @@ libzvbi-common
 libzxcvbn0
 libzxing3
 linux-base
-linux-image-6.12.48+deb13-amd64
+linux-image-6.12.63+deb13-amd64
 linux-image-amd64
 linux-libc-dev
 linux-sysctl-defaults
