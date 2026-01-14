@@ -306,7 +306,6 @@ wpasupplicant
 wtmpdb
 xarchiver
 xdg-desktop-portal-wlr
-xwayland
 xz-utils
 yt-dlp
 zathura

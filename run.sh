@@ -39,7 +39,6 @@ grim
 slurp
 jq
 xdg-desktop-portal-wlr
-xwayland
 thunar
 thunar-archive-plugin
 tumbler

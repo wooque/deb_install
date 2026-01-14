@@ -948,7 +948,6 @@ libxcb-xfixes0
 libxcb-xinput0
 libxcomposite1
 libxcursor1
-libxcvt0
 libxdamage1
 libxdmcp6
 libxext6
@@ -958,7 +957,6 @@ libxfce4util7
 libxfce4util-common
 libxfconf-0-3
 libxfixes3
-libxfont2
 libxft2
 libxi6
 libxinerama1
@@ -1215,7 +1213,6 @@ wpasupplicant
 wtmpdb
 x11-common
 x11-utils
-x11-xkb-utils
 xarchiver
 xauth
 xdg-desktop-portal
@@ -1227,8 +1224,6 @@ xfonts-encodings
 xfonts-utils
 xkb-data
 xml-core
-xserver-common
-xwayland
 xz-utils
 yt-dlp
 zathura
