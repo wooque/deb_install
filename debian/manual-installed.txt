@@ -78,7 +78,7 @@ gcc-14-base
 gettext-base
 gimp
 git
-gitk
+gitg
 gnome-keyring
 google-chrome-stable
 grep

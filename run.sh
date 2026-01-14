@@ -107,7 +107,7 @@ docker-cli
 docker-buildx
 docker-compose
 git
-gitk
+gitg
 meld
 build-essential
 python3-venv
