@@ -35,7 +35,6 @@ bluetooth
 bluez
 bluez-obexd
 brave-browser
-brave-keyring
 brightnessctl
 brightness-udev
 bsdextrautils
