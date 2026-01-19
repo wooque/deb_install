@@ -261,13 +261,43 @@ asdf-vm () {
 
 dropbox () {
   local key=/usr/share/keyrings/dropbox.gpg
-  wget -qO- https://linux.dropboxstatic.com/fedora/rpm-public-key.asc | gpgd $key
+  # https://github.com/dropbox/nautilus-dropbox/blob/ad2ba4133512aabcb84bac38c88669a63c0f368c/generate-deb.sh
+  cat >/etc/apt/keyrings/dropbox.asc <<EOF
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+
+mQENBEt0ibEBCACv4hZRPqwtpU6z8+BB5YZU1a3yjEvg2W68+a6hEwxtCa2U++4d
+zQ+7EqaUq5ybQnwtbDdpFpsOi9x31J+PCpufPUfIG694/0rlEpmzl2GWzY8NqfdB
+FGGm/SPSSwvKbeNcFMRLu5neo7W9kwvfMbGjHmvUbzBUVpCVKD0OEEf1q/Ii0Qce
+kx9CMoLvWq7ZwNHEbNnij7ecnvwNlE2MxNsOSJj+hwZGK+tM19kuYGSKw4b5mR8I
+yThlgiSLIfpSBh1n2KX+TDdk9GR+57TYvlRu6nTPu98P05IlrrCP+KF0hYZYOaMv
+Qs9Rmc09tc/eoQlN0kkaBWw9Rv/dvLVc0aUXABEBAAG0MURyb3Bib3ggQXV0b21h
+dGljIFNpZ25pbmcgS2V5IDxsaW51eEBkcm9wYm94LmNvbT6JATYEEwECACAFAkt0
+ibECGwMGCwkIBwMCBBUCCAMEFgIDAQIeAQIXgAAKCRD8kYszUESRLi/zB/wMscEa
+15rS+0mIpsORknD7kawKwyda+LHdtZc0hD/73QGFINR2P23UTol/R4nyAFEuYNsF
+0C4IAD6y4pL49eZ72IktPrr4H27Q9eXhNZfJhD7BvQMBx75L0F5gSQwuC7GdYNlw
+SlCD0AAhQbi70VBwzeIgITBkMQcJIhLvllYo/AKD7Gv9huy4RLaIoSeofp+2Q0zU
+HNPl/7zymOqu+5Oxe1ltuJT/kd/8hU+N5WNxJTSaOK0sF1/wWFM6rWd6XQUP03Vy
+NosAevX5tBo++iD1WY2/lFVUJkvAvge2WFk3c6tAwZT/tKxspFy4M/tNbDKeyvr6
+85XKJw9ei6GcOGHDiQGRBBMBCACFBYJpSvoxBAsJCAcJEPyRizNQRJEuRxQAAAAA
+AB4AIHNhbHRAbm90YXRpb25zLnNlcXVvaWEtcGdwLm9yZzm02zKJt0bJ2GvF0gBR
+jDvHvvvTo2Yb2+/hvhtrIYZGAhUIBBYCAwECF4ACGwMCHgEWIQQcYaJlb7V7fk3g
+9MH8kYszUESRLgAAwt4H/3saLWbASC+dJd4YEh7hWZtoMSKxYYBrnvhbfgidxvSV
+XiJzYjPZbqw7fRjD6rbk/XnC+U5nFEHB6B7DxbG4R3xtuezwEYOq8Fn4N8uyOkby
+k9FXWks0a2Q2uZ3+V4UH6CjrpnYPwnvfmGGPJ26iGrIEn94oAyCeqN0lzk4yIKU2
+JolW1NVG0udlVsPEZuBTo1L07r1092A8jfjwNQakdI67uNkFCK6b/gNBkWzP6sz3
+FSRXSIhwcJ23AECuUDUOqZJRKxJGo0zybRBhrjMA+ynjfDzwc6/4CCnnTgptMcOD
+N35BHMH1ogcdOFNZOJY4HGd9HOONs40Av9f0GzX8DO8=
+=kwIr
+-----END PGP PUBLIC KEY BLOCK-----
+EOF
+
   sudo tee /etc/apt/sources.list.d/dropbox.sources <<EOF
 Types: deb
 URIs: http://linux.dropbox.com/debian/
 Suites: trixie
 Components: main
-Signed-By: $key
+Signed-By: /etc/apt/keyrings/dropbox.asc
 EOF
   sudo apt update && ai dropbox
   sudo rm -f /etc/apt/sources.list.d/dropbox.list
@@ -388,15 +418,6 @@ EOF
   git fetch --set-upstream origin master
   git reset --hard origin/master
   git remote set-url origin "git@github.com:$DOTFILES_GITHUB.git"
-
-  echo_sleep "key signing workaround..."
-  sudo mkdir -p /etc/crypto-policies/back-ends
-  sudo tee /etc/crypto-policies/back-ends/apt-sequoia.config <<EOF
-[hash_algorithms]
-sha1.collision_resistance = "always"
-sha1.second_preimage_resistance = "always"
-EOF
-  sudo apt update
 
   # flaky installs at the end
   for app in $INSTALL_EXTRA; do
