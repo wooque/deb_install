@@ -42,6 +42,7 @@ xdg-desktop-portal-wlr
 thunar
 thunar-archive-plugin
 tumbler
+ffmpegthumbnailer
 gvfs
 gvfs-backends
 eject

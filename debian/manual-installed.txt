@@ -58,6 +58,7 @@ exfalso
 fastfetch
 fdisk
 ffmpeg
+ffmpegthumbnailer
 file
 findutils
 firefox
