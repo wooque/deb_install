@@ -54,6 +54,7 @@ dpkg
 dropbox
 e2fsprogs
 eject
+ethtool
 exfalso
 fastfetch
 fdisk
@@ -262,6 +263,7 @@ sed
 sensible-utils
 shim-signed
 slurp
+smartmontools
 sqv
 strace
 sudo

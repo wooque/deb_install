@@ -83,6 +83,8 @@ ranger
 cmus
 cmus-plugin-ffmpeg
 tlp
+ethtool
+smartmontools
 upower
 htop
 lm-sensors

@@ -105,6 +105,7 @@ e2fsprogs
 efibootmgr
 eject
 emacsen-common
+ethtool
 evolution-data-server-common
 exfalso
 exo-utils
@@ -1156,6 +1157,7 @@ shim-signed
 shim-signed-common
 shim-unsigned
 slurp
+smartmontools
 sound-theme-freedesktop
 sphinx-rtd-theme-common
 sqv
