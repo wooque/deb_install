@@ -311,7 +311,7 @@ DISABLE_USER_SERVICES="gvfs-afc-volume-monitor gvfs-goa-volume-monitor gvfs-gpho
 
 USER_GROUPS="docker"
 FSTAB="LABEL=PODACI /mnt/PODACI ext4 rw,noatime,x-gvfs-show 0 1"
-CRON="0 17,23 * * * bash -ic backup"
+CRON="0 17,23 * * * scripts backup"
 DOTFILES_GITHUB="wooque/dotfiles"
 
 main () {
