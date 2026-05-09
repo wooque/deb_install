@@ -658,6 +658,7 @@ libnma0
 libnma-common
 libnorm1t64
 libnotify4
+libnotify-bin
 libnpth0t64
 libnspr4
 libnss3

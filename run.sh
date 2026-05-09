@@ -25,6 +25,7 @@ blueman
 playerctl
 ncal
 mako-notifier
+libnotify-bin
 gammastep
 wl-clipboard
 cliphist

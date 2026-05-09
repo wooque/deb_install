@@ -157,6 +157,7 @@ libnettle8t64
 libnewt0.52
 libnftables1
 libnftnl11
+libnotify-bin
 libnss-systemd
 libopengl0
 libpam0g
