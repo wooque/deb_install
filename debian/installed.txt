@@ -1003,7 +1003,7 @@ libzvbi-common
 libzxcvbn0
 libzxing3
 linux-base
-linux-image-6.12.86+deb13-amd64
+linux-image-6.12.88+deb13-amd64
 linux-image-amd64
 linux-libc-dev
 linux-sysctl-defaults
