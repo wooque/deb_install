@@ -15,7 +15,7 @@ beekeeper-studio
 bind9-dnsutils
 bind9-host
 blueman
-brave-browser
+brave-origin
 brightnessctl
 brightness-udev
 bsdutils

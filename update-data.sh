@@ -9,4 +9,4 @@ sed '/^\[org\/blueman\/plugins\/autoconnect\]/,/^$/d' | \
 sed '/^\[org\/blueman\/plugins\/recentconns\]/,/^$/d' | \
 sed '/^\[org\/gnome\/nm-applet\/eap/,/^$/d' | \
 sed '/^\[org\/gnome\/gitg\/state/,/^$/d' | \
-grep -vE '^(size=\(|window-properties=\[|state=|width=|height=)' > "$DISTRO"/dconf.conf
+grep -vE '^(size=\(|window-properties=\[|state=|width=|height=|window-position=|window-size=)' > "$DISTRO"/dconf.conf

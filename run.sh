@@ -122,7 +122,7 @@ INSTALL_PACKAGES=$(echo "$PACKAGES" | grep -vE '^#|^\s*$')
 EXTRA_PACKAGES="
 wl-clip-persist
 firefox
-brave-browser
+brave-origin
 google-chrome-stable
 viber
 code
@@ -172,7 +172,7 @@ EOF
   sudo apt update && ai firefox
 }
 
-brave-browser () {
+brave-origin () {
   local key=/usr/share/keyrings/brave-browser-archive-keyring.gpg
   wget -qO- https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg | sudo tee $key >/dev/null
   sudo tee /etc/apt/sources.list.d/brave-browser-release.sources <<EOF
@@ -182,7 +182,7 @@ Suites: stable
 Components: main
 Signed-By: $key
 EOF
-  sudo apt update && ai brave-browser
+  sudo apt update && ai brave-origin
 }
 
 google-chrome-stable () {
