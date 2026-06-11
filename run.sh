@@ -96,6 +96,7 @@ fastfetch
 yt-dlp
 ffmpeg
 imagemagick
+librsvg2-bin
 rclone
 syncthing
 unattended-upgrades
