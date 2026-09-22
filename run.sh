@@ -40,6 +40,7 @@ grim
 slurp
 jq
 xdg-desktop-portal-wlr
+xdg-desktop-portal-gtk
 thunar
 thunar-archive-plugin
 tumbler
@@ -63,6 +64,7 @@ xarchiver
 mousepad
 ristretto
 webp-pixbuf-loader
+libavif-gdk-pixbuf
 zathura
 libreoffice-gtk3
 libreoffice-writer
