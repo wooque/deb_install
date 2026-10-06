@@ -82,7 +82,6 @@ gimp
 git
 gitg
 gnome-keyring
-google-chrome-stable
 grep
 grim
 groff-base
@@ -267,6 +266,7 @@ sensible-utils
 shim-signed
 slurp
 smartmontools
+sqlite3
 sqv
 strace
 sudo

@@ -119,6 +119,7 @@ build-essential
 python3-venv
 awscli
 tokei
+sqlite3
 rustup"
 INSTALL_PACKAGES=$(echo "$PACKAGES" | grep -vE '^#|^\s*$')
 
@@ -126,10 +127,8 @@ EXTRA_PACKAGES="
 wl-clip-persist
 firefox
 brave-origin
-google-chrome-stable
 viber
 code
-cursor
 beekeeper-studio
 nodejs
 asdf-vm
@@ -219,15 +218,6 @@ Components: main
 Signed-By: $key
 EOF
   sudo apt update && ai code
-}
-
-cursor () {
-  ai libfuse2t64
-  local downloadUrl=$(wget -qO- "https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable" | jq .downloadUrl)
-  wget ${downloadUrl//\"/} -qO /tmp/cursor.appimage
-  chmod +x /tmp/cursor.appimage
-  mkdir -p $HOME/.local/bin
-  mv /tmp/cursor.appimage $HOME/.local/bin/cursor-appimage
 }
 
 beekeeper-studio () {

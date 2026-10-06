@@ -176,7 +176,6 @@ glib-networking-services
 gnome-keyring
 gnupg
 gnupg-l10n
-google-chrome-stable
 gpg
 gpg-agent
 gpgconf
@@ -1005,7 +1004,7 @@ libzvbi-common
 libzxcvbn0
 libzxing3
 linux-base
-linux-image-6.12.107+deb13-amd64
+linux-image-6.12.111+deb13-amd64
 linux-image-amd64
 linux-libc-dev
 linux-sysctl-defaults
@@ -1163,6 +1162,7 @@ slurp
 smartmontools
 sound-theme-freedesktop
 sphinx-rtd-theme-common
+sqlite3
 sqv
 strace
 sudo
