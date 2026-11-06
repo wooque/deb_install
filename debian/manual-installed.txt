@@ -159,7 +159,6 @@ libnftables1
 libnftnl11
 libnotify-bin
 libnss-systemd
-libopengl0
 libpam0g
 libpam-modules
 libpam-modules-bin

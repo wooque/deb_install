@@ -676,7 +676,6 @@ libopencore-amrnb0
 libopencore-amrwb0
 libopenexr-3-1-30
 libopenfec1
-libopengl0
 libopenjp2-7
 libopenmpt0t64
 libopenmpt-modplug1
@@ -940,6 +939,8 @@ libxcb-errors0
 libxcb-ewmh2
 libxcb-glx0
 libxcb-icccm4
+libxcb-image0
+libxcb-keysyms1
 libxcb-present0
 libxcb-randr0
 libxcb-render0
@@ -951,6 +952,7 @@ libxcb-sync1
 libxcb-util1
 libxcb-xfixes0
 libxcb-xinput0
+libxcb-xkb1
 libxcomposite1
 libxcursor1
 libxdamage1
@@ -966,6 +968,7 @@ libxft2
 libxi6
 libxinerama1
 libxkbcommon0
+libxkbcommon-x11-0
 libxkbfile1
 libxkbregistry0
 libxml2
@@ -1004,7 +1007,7 @@ libzvbi-common
 libzxcvbn0
 libzxing3
 linux-base
-linux-image-6.12.111+deb13-amd64
+linux-image-6.12.115+deb13.1-amd64
 linux-image-amd64
 linux-libc-dev
 linux-sysctl-defaults

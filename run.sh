@@ -202,7 +202,6 @@ EOF
 }
 
 viber () {
-  ai libopengl0
   wget "https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb" -O /tmp/viber.deb
   ai /tmp/viber.deb
 }
